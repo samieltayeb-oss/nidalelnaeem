@@ -1,0 +1,120 @@
+[
+  {
+    "id": "portrait-01-studio-pinstripe",
+    "label": "Studio Pinstripe Portrait (Uncropped Source from SVG 01)",
+    "assignedRole": "Chapter III (Pan-Arab Newsroom), On Screen Lead Explainer Companion & Behind the Work Plate I",
+    "originalContainer": "01_Editorial_Portrait.svg",
+    "extractedSourcePath": "/media/sources/portrait-01-studio-pinstripe.jpg",
+    "nativeWidth": 1152,
+    "nativeHeight": 2048,
+    "nativeBytes": 174057,
+    "focalPoint": "50% 24%",
+    "status": "candidate_public_profile",
+    "sourceUrl": "https://www.facebook.com/photo.php?fbid=26225452487104095&set=pb.100001981029300.-2207520000&type=3",
+    "credit": "Nidal Elnaeem public profile (permission required for public launch)",
+    "primaryWebp": "/media/derivatives/portrait-01-studio-pinstripe.webp",
+    "primaryAvif": "/media/derivatives/portrait-01-studio-pinstripe.avif",
+    "posterConceptWebp": "/media/derivatives/poster-portrait-01-studio-pinstripe.webp",
+    "responsive": {
+      "webp": {
+        "480w": "/media/derivatives/portrait-01-studio-pinstripe-480w.webp",
+        "800w": "/media/derivatives/portrait-01-studio-pinstripe-800w.webp",
+        "1152w": "/media/derivatives/portrait-01-studio-pinstripe-1152w.webp"
+      },
+      "avif": {
+        "480w": "/media/derivatives/portrait-01-studio-pinstripe-480w.avif",
+        "800w": "/media/derivatives/portrait-01-studio-pinstripe-800w.avif",
+        "1152w": "/media/derivatives/portrait-01-studio-pinstripe-1152w.avif"
+      }
+    }
+  },
+  {
+    "id": "portrait-02-saudi-media-forum",
+    "label": "Saudi Media Forum Portrait — Riyadh (Uncropped Source from SVG 02)",
+    "assignedRole": "Chapter IV (Public Forums & Presence) & Behind the Work Plate II (Credited to @momen_alfadl)",
+    "originalContainer": "02_Midnight_Broadcast.svg",
+    "extractedSourcePath": "/media/sources/portrait-02-saudi-media-forum.jpg",
+    "nativeWidth": 1440,
+    "nativeHeight": 1920,
+    "nativeBytes": 157985,
+    "focalPoint": "50% 26%",
+    "status": "candidate_credited_photographer",
+    "sourceUrl": "https://www.facebook.com/photo.php?fbid=25639588639023819&set=pb.100001981029300.-2207520000&type=3",
+    "credit": "Photograph credited to @momen_alfadl (reuse permission required for public launch)",
+    "primaryWebp": "/media/derivatives/portrait-02-saudi-media-forum.webp",
+    "primaryAvif": "/media/derivatives/portrait-02-saudi-media-forum.avif",
+    "posterConceptWebp": "/media/derivatives/poster-portrait-02-saudi-media-forum.webp",
+    "responsive": {
+      "webp": {
+        "480w": "/media/derivatives/portrait-02-saudi-media-forum-480w.webp",
+        "800w": "/media/derivatives/portrait-02-saudi-media-forum-800w.webp",
+        "1200w": "/media/derivatives/portrait-02-saudi-media-forum-1200w.webp",
+        "1440w": "/media/derivatives/portrait-02-saudi-media-forum-1440w.webp"
+      },
+      "avif": {
+        "480w": "/media/derivatives/portrait-02-saudi-media-forum-480w.avif",
+        "800w": "/media/derivatives/portrait-02-saudi-media-forum-800w.avif",
+        "1200w": "/media/derivatives/portrait-02-saudi-media-forum-1200w.avif",
+        "1440w": "/media/derivatives/portrait-02-saudi-media-forum-1440w.avif"
+      }
+    }
+  },
+  {
+    "id": "portrait-03-newsroom-archive",
+    "label": "Newsroom & Photo Archive Portrait (Uncropped Source from SVG 03)",
+    "assignedRole": "Chapter II (Television & Concurrent Horizons), Words & Stories Reflection Lead & Behind the Work Plate III",
+    "originalContainer": "03_Gallery_Profile.svg",
+    "extractedSourcePath": "/media/sources/portrait-03-newsroom-archive.jpg",
+    "nativeWidth": 1152,
+    "nativeHeight": 2048,
+    "nativeBytes": 147100,
+    "focalPoint": "52% 28%",
+    "status": "candidate_public_profile",
+    "sourceUrl": "https://www.facebook.com/photo.php?fbid=26052318974417448&set=pb.100001981029300.-2207520000&type=3",
+    "credit": "Nidal Elnaeem public profile (permission required for public launch)",
+    "primaryWebp": "/media/derivatives/portrait-03-newsroom-archive.webp",
+    "primaryAvif": "/media/derivatives/portrait-03-newsroom-archive.avif",
+    "posterConceptWebp": "/media/derivatives/poster-portrait-03-newsroom-archive.webp",
+    "responsive": {
+      "webp": {
+        "480w": "/media/derivatives/portrait-03-newsroom-archive-480w.webp",
+        "800w": "/media/derivatives/portrait-03-newsroom-archive-800w.webp",
+        "1152w": "/media/derivatives/portrait-03-newsroom-archive-1152w.webp"
+      },
+      "avif": {
+        "480w": "/media/derivatives/portrait-03-newsroom-archive-480w.avif",
+        "800w": "/media/derivatives/portrait-03-newsroom-archive-800w.avif",
+        "1152w": "/media/derivatives/portrait-03-newsroom-archive-1152w.avif"
+      }
+    }
+  },
+  {
+    "id": "portrait-04-broadcast-yellow-blazer",
+    "label": "Broadcast Studio Portrait — Navy Blazer & Yellow Top (Owner-Supplied Source)",
+    "assignedRole": "Home 'In Focus' Opening Scene Foreground Portrait & Behind the Work Plate IV",
+    "originalContainer": "04_The_Broadcast_Edit.svg",
+    "extractedSourcePath": "/media/sources/portrait-04-broadcast-yellow-blazer.jpg",
+    "nativeWidth": 960,
+    "nativeHeight": 960,
+    "nativeBytes": 91380,
+    "focalPoint": "52% 26%",
+    "status": "approved_owner_supplied",
+    "sourceUrl": "Owner-supplied source asset",
+    "credit": "Owner-supplied key approved source portrait",
+    "primaryWebp": "/media/derivatives/portrait-04-broadcast-yellow-blazer.webp",
+    "primaryAvif": "/media/derivatives/portrait-04-broadcast-yellow-blazer.avif",
+    "posterConceptWebp": "/media/derivatives/poster-portrait-04-broadcast-yellow-blazer.webp",
+    "responsive": {
+      "webp": {
+        "480w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-480w.webp",
+        "800w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-800w.webp",
+        "960w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-960w.webp"
+      },
+      "avif": {
+        "480w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-480w.avif",
+        "800w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-800w.avif",
+        "960w": "/media/derivatives/portrait-04-broadcast-yellow-blazer-960w.avif"
+      }
+    }
+  }
+]

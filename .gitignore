@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Vercel
+.vercel/
+
+# Environment & local logs
+.env*
+*.log
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# Preserve raw local workspace design masters on disk without bloating Git repo
+/*.svg
+/*.png

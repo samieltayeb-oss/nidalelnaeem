@@ -1,0 +1,41 @@
+[
+  {
+    "size": [
+      1152,
+      2048
+    ],
+    "source": "https://www.facebook.com/photo.php?fbid=26225452487104095&set=pb.100001981029300.-2207520000&type=3",
+    "visibility": "Shared with Public",
+    "author": "Nidal Elnaeem verified profile",
+    "poster": 1
+  },
+  {
+    "size": [
+      1440,
+      1920
+    ],
+    "source": "https://www.facebook.com/photo.php?fbid=25639588639023819&set=pb.100001981029300.-2207520000&type=3",
+    "visibility": "Shared with Public",
+    "author": "Nidal Elnaeem verified profile",
+    "poster": 2,
+    "photographer_credit": "@momen_alfadl (credited in the Facebook post)"
+  },
+  {
+    "size": [
+      1152,
+      2048
+    ],
+    "source": "https://www.facebook.com/photo.php?fbid=26052318974417448&set=pb.100001981029300.-2207520000&type=3",
+    "visibility": "Shared with Public",
+    "author": "Nidal Elnaeem verified profile",
+    "poster": 3
+  },
+  {
+    "poster": 4,
+    "source": "User-supplied navy blazer / yellow top portrait",
+    "size": [
+      960,
+      960
+    ]
+  }
+]

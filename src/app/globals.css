@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-midnight: #060e16;
+    --bg-navy: #0a1722;
+    --bg-slate: #102232;
+    --bg-ivory: #f4f0e8;
+    --text-ivory: #f4eee3;
+    --text-sand: #d1c7b8;
+    --text-muted: #93a3b1;
+    --accent-red: #ed2530;
+    --accent-champagne: #c8b692;
+    --font-amiri: "Amiri", "Traditional Arabic", Georgia, serif;
+    --font-ibm-arabic: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+    --font-cormorant: "Cormorant Garamond", Georgia, Cambria, serif;
+    --font-jakarta: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-jetbrains: "JetBrains Mono", Consolas, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-midnight);
+    color: var(--text-ivory);
+  }
+
+  body {
+    background-color: var(--bg-midnight);
+    color: var(--text-ivory);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus ring for keyboard accessibility */
+  :focus-visible {
+    outline: 2px solid var(--accent-champagne);
+    outline-offset: 3px;
+  }
+}
+
+/* Typography helpers */
+.font-display-ar {
+  font-family: var(--font-amiri), "Traditional Arabic", Georgia, serif;
+}
+
+.font-sans-ar {
+  font-family: var(--font-ibm-arabic), system-ui, -apple-system, sans-serif;
+}
+
+.font-display-en {
+  font-family: var(--font-cormorant), Georgia, Cambria, serif;
+}
+
+.font-sans-en {
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+.font-mono-code {
+  font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* "In Focus" Studio Spotlight Reveal Mask */
+.in-focus-spotlight-layer {
+  pointer-events: none;
+  will-change: opacity;
+  -webkit-mask-image: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 44%),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.72) 42%,
+    rgba(0, 0, 0, 0.18) 68%,
+    rgba(0, 0, 0, 0) 88%
+  );
+  mask-image: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 44%),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.72) 42%,
+    rgba(0, 0, 0, 0.18) 68%,
+    rgba(0, 0, 0, 0) 88%
+  );
+}
+
+/* Static composition when spotlight is turned off or on touch/reduced-motion devices */
+[data-spotlight="static"] .in-focus-spotlight-layer {
+  -webkit-mask-image: radial-gradient(
+    680px ellipse at 50% 42%,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.42) 55%,
+    rgba(0, 0, 0, 0.08) 85%
+  );
+  mask-image: radial-gradient(
+    680px ellipse at 50% 42%,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.42) 55%,
+    rgba(0, 0, 0, 0.08) 85%
+  );
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .in-focus-spotlight-layer {
+    -webkit-mask-image: radial-gradient(
+      680px ellipse at 50% 42%,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.42) 55%,
+      rgba(0, 0, 0, 0.08) 85%
+    ) !important;
+    mask-image: radial-gradient(
+      680px ellipse at 50% 42%,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.42) 55%,
+      rgba(0, 0, 0, 0.08) 85%
+    ) !important;
+  }
+}
+
+/* Gentle signature reveal */
+@keyframes signatureAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signature-reveal {
+  animation: signatureAppear 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes subtleFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editorial-reveal {
+  animation: subtleFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .signature-reveal,
+  .editorial-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

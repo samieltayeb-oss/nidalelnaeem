@@ -163,8 +163,11 @@ export function SelectedVideoWorkShowcase({
       {igVideos.length > 0 && (
         <div className="space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/[0.07] pb-4">
-            <div className="flex items-center gap-3">
-              <span className="font-mono-code text-xs font-extrabold text-[#FF1E2D]">
+            <div className="flex flex-wrap items-center gap-3">
+              <span
+                dir="ltr"
+                className="shrink-0 rounded-full bg-[#FFF0F1] px-3 py-1 font-mono-code text-xs font-extrabold text-[#FF1E2D]"
+              >
                 01 / INSTAGRAM
               </span>
               <h3 className="text-lg sm:text-xl font-extrabold text-[#090A0F]">
@@ -198,8 +201,11 @@ export function SelectedVideoWorkShowcase({
       {fbVideos.length > 0 && (
         <div className="space-y-6 pt-4">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/[0.07] pb-4">
-            <div className="flex items-center gap-3">
-              <span className="font-mono-code text-xs font-extrabold text-[#FF1E2D]">
+            <div className="flex flex-wrap items-center gap-3">
+              <span
+                dir="ltr"
+                className="shrink-0 rounded-full bg-[#FFF0F1] px-3 py-1 font-mono-code text-xs font-extrabold text-[#FF1E2D]"
+              >
                 02 / FACEBOOK
               </span>
               <h3 className="text-lg sm:text-xl font-extrabold text-[#090A0F]">

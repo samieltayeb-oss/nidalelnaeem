@@ -26,20 +26,20 @@ export default async function LocaleLayout({
     <div
       dir={isAr ? "rtl" : "ltr"}
       lang={typedLocale}
-      className={`min-h-screen flex flex-col ${
-        isAr ? "font-sans-ar" : "font-sans-en"
+      className={`min-h-screen flex flex-col bg-white text-[#090A0F] selection:bg-[#FF1E2D] selection:text-white ${
+        isAr ? "font-modern-ar" : "font-modern-en"
       }`}
     >
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[100] focus:rounded focus:bg-[#ED2530] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[100] focus:rounded-full focus:bg-[#FF1E2D] focus:px-5 focus:py-2.5 focus:text-sm focus:font-bold focus:text-white"
       >
         {isAr ? "تخطي إلى المحتوى الرئيسي" : "Skip to main content"}
       </a>
 
       <SiteHeader locale={typedLocale} />
 
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 bg-white">
         {children}
       </main>
 

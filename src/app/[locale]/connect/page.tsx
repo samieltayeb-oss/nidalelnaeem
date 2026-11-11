@@ -29,6 +29,7 @@ export default async function ConnectPage({
   if (locale !== "ar" && locale !== "en") notFound();
   const typedLocale = locale as Locale;
   const isAr = typedLocale === "ar";
+  const ArrowIcon = isAr ? ArrowUpLeft : ArrowUpRight;
 
   const channels = [
     {
@@ -102,24 +103,16 @@ export default async function ConnectPage({
   ];
 
   return (
-    <div className="bg-[#07090E]">
+    <div className="bg-white text-[#090A0F]">
       {/* Main Connect Hero & Direct Email */}
-      <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(ellipse_at_top,#121826_0%,#07090E_75%)] py-16 sm:py-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(560px circle at 20% 20%, rgba(212, 190, 150, 0.10), transparent 70%), radial-gradient(480px circle at 80% 25%, rgba(230, 36, 47, 0.08), transparent 70%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="border-b border-black/[0.06] bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
             {/* Left / Main Contact Column */}
             <div className="lg:col-span-7 space-y-7">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D4BE96]/30 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-[#D4BE96]">
-                  <Mail className="h-3.5 w-3.5 text-[#E6242F]" />
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#FFF0F1] px-4 py-2 text-xs font-extrabold text-[#FF1E2D]">
+                  <Mail className="h-3.5 w-3.5" />
                   <span>
                     {isAr
                       ? "التواصل المباشر والحسابات الرسمية"
@@ -127,38 +120,32 @@ export default async function ConnectPage({
                   </span>
                 </span>
 
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs text-[#C8C2B8]">
-                  <MapPin className="h-3.5 w-3.5 text-[#D4BE96]" />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F3F4F7] px-4 py-2 text-xs font-bold text-[#090A0F]">
+                  <MapPin className="h-3.5 w-3.5 text-[#FF1E2D]" />
                   <span>{CV_CONTACT_INFO.location[typedLocale]}</span>
                 </span>
               </div>
 
-              <h1
-                className={`text-[#F7F4EE] leading-[1.15] ${
-                  isAr
-                    ? "font-display-ar text-3xl sm:text-5xl lg:text-6xl font-bold"
-                    : "font-display-en text-4xl sm:text-5xl lg:text-6xl font-semibold"
-                }`}
-              >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#090A0F] leading-[1.12]">
                 {isAr
                   ? "للتواصل المهني، وإدارة الجلسات، والدعوات الإعلامية"
                   : "For Media Inquiries, Speaking & Editorial Collaboration"}
               </h1>
 
-              <p className="text-base sm:text-lg leading-[1.85] text-[#C8C2B8]">
+              <p className="text-base sm:text-lg leading-[1.85] text-[#525866]">
                 {isAr
                   ? "ترحب نضال النعيم بالمراسلات المهنية من المؤسسات الإعلامية، والمنتديات الحوارية، ومراكز التدريب والزملاء الصحفيين عبر بريدها الإلكتروني المباشر أو حساباتها الرسمية."
                   : "Nidal Elnaeem welcomes professional inquiries from media organizations, conferences, training institutes, and fellow journalists via direct email or her official social channels."}
               </p>
 
               {/* Direct Email Primary Card */}
-              <div className="rounded-3xl border border-[#D4BE96]/30 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-6 sm:p-8 shadow-2xl backdrop-blur-md space-y-4">
+              <div className="rounded-[32px] bg-[#F3F4F7] p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs font-semibold text-[#D4BE96]">
+                  <span className="text-xs font-extrabold tracking-wider text-[#FF1E2D] uppercase">
                     {isAr ? "البريد الإلكتروني المباشر" : "DIRECT PROFESSIONAL EMAIL"}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E6242F]/15 px-3 py-0.5 text-[11px] font-medium text-[#F7F4EE]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#E6242F]" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1 text-[11px] font-bold text-[#090A0F] shadow-2xs">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#FF1E2D]" />
                     <span>{CV_CONTACT_INFO.location[typedLocale]}</span>
                   </span>
                 </div>
@@ -167,14 +154,14 @@ export default async function ConnectPage({
                   <a
                     href={`mailto:${CV_CONTACT_INFO.email}`}
                     dir="ltr"
-                    className="font-mono-code text-lg sm:text-2xl font-semibold text-[#F7F4EE] underline decoration-[#D4BE96]/40 underline-offset-8 transition hover:text-[#D4BE96]"
+                    className="font-mono-code text-lg sm:text-2xl font-extrabold text-[#090A0F] underline decoration-[#FF1E2D]/40 underline-offset-8 transition hover:text-[#FF1E2D] break-all"
                   >
                     {CV_CONTACT_INFO.email}
                   </a>
 
                   <a
                     href={`mailto:${CV_CONTACT_INFO.email}`}
-                    className="inline-flex items-center justify-center gap-2 self-start sm:self-auto rounded-full bg-[#E6242F] px-6 py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-[#E6242F]/25 transition hover:bg-[#cc1d27]"
+                    className="inline-flex items-center justify-center gap-2 self-start sm:self-auto rounded-full bg-[#FF1E2D] px-6 py-3.5 text-xs sm:text-sm font-bold text-white shadow-[0_12px_28px_rgba(255,30,45,0.25)] transition hover:bg-[#090A0F] shrink-0"
                   >
                     <Mail className="h-4 w-4" />
                     <span>{isAr ? "إرسال رسالة الآن" : "Send Email"}</span>
@@ -190,12 +177,12 @@ export default async function ConnectPage({
                     href={channel.data.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6 transition-all hover:border-[#D4BE96]/45 hover:bg-white/[0.06]"
+                    className="group flex flex-col justify-between rounded-[28px] border border-black/[0.06] bg-white p-6 shadow-xs transition-all hover:-translate-y-0.5 hover:shadow-lg"
                   >
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between text-xs text-[#D4BE96]">
+                      <div className="flex items-center justify-between text-xs font-bold text-[#525866]">
                         <div className="flex items-center gap-2.5">
-                          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#D4BE96]/25 bg-[#07090E] text-[#D4BE96] transition-colors group-hover:border-[#D4BE96] group-hover:text-[#F7F4EE]">
+                          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F3F4F7] text-[#090A0F] transition-colors group-hover:bg-[#090A0F] group-hover:text-white">
                             <SocialPlatformIcon
                               platform={channel.key}
                               className="h-4 w-4"
@@ -203,29 +190,19 @@ export default async function ConnectPage({
                           </span>
                           <span>{channel.data.statusNote[typedLocale]}</span>
                         </div>
-                        <ExternalLink className="h-4 w-4 text-[#E6242F] opacity-80 transition group-hover:opacity-100" />
+                        <ExternalLink className="h-4 w-4 text-[#FF1E2D]" />
                       </div>
-                      <h2
-                        className={`text-lg text-[#F7F4EE] ${
-                          isAr
-                            ? "font-display-ar font-bold"
-                            : "font-display-en font-semibold"
-                        }`}
-                      >
+                      <h2 className="text-lg font-extrabold text-[#090A0F]">
                         {channel.data.label[typedLocale]}
                       </h2>
-                      <p className="font-mono-code text-xs text-[#9E988E]" dir="ltr">
+                      <p className="font-mono-code text-xs font-semibold text-[#525866]" dir="ltr">
                         {channel.data.handle}
                       </p>
                     </div>
 
-                    <div className="mt-5 flex items-center gap-1.5 text-xs font-semibold text-[#F7F4EE] group-hover:text-[#D4BE96]">
+                    <div className="mt-5 flex items-center gap-1.5 text-xs font-extrabold text-[#090A0F] group-hover:text-[#FF1E2D]">
                       <span>{channel.cta[typedLocale]}</span>
-                      {isAr ? (
-                        <ArrowUpLeft className="h-3.5 w-3.5 text-[#E6242F]" />
-                      ) : (
-                        <ArrowUpRight className="h-3.5 w-3.5 text-[#E6242F]" />
-                      )}
+                      <ArrowIcon className="h-3.5 w-3.5 text-[#FF1E2D]" />
                     </div>
                   </a>
                 ))}
@@ -234,8 +211,8 @@ export default async function ConnectPage({
 
             {/* Right Column: Editorial Portrait + Signature + Network Card */}
             <div className="lg:col-span-5 space-y-6">
-              <figure className="overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] p-3 shadow-2xl">
-                <div className="overflow-hidden rounded-2xl">
+              <figure className="overflow-hidden rounded-[40px] bg-[#F3F4F7] p-3.5 shadow-[0_24px_70px_rgba(9,10,15,0.08)]">
+                <div className="overflow-hidden rounded-[30px]">
                   <picture className="block w-full">
                     <source
                       srcSet="/media/derivatives/portrait-04-broadcast-yellow-blazer.avif"
@@ -248,61 +225,59 @@ export default async function ConnectPage({
                     />
                   </picture>
                 </div>
-                <figcaption className="mt-3 flex items-center justify-between px-2 pb-1 text-xs text-[#C8C2B8]">
-                  <span className="font-semibold text-[#F7F4EE]">
+                <figcaption className="mt-3 flex items-center justify-between px-3 pb-1 text-xs">
+                  <span className="font-extrabold text-[#090A0F]">
                     {SITE_IDENTITY.name[typedLocale]}
                   </span>
-                  <span className="text-[#D4BE96]">
+                  <span className="font-bold text-[#FF1E2D]">
                     {SITE_IDENTITY.associationLabel[typedLocale]}
                   </span>
                 </figcaption>
               </figure>
 
               {/* Signature & Newsroom Card */}
-              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-7 space-y-5">
+              <div className="rounded-[32px] bg-[#F3F4F7] p-6 sm:p-7 space-y-5">
                 <div className="flex items-center justify-between">
-                  <AlHadathMark className="h-5 w-auto" />
-                  <Globe className="h-4 w-4 text-[#D4BE96]" />
+                  <AlHadathMark
+                    className="h-5 w-auto"
+                    wordmarkColor="#090A0F"
+                    bracketColor="#FF1E2D"
+                  />
+                  <Globe className="h-4 w-4 text-[#FF1E2D]" />
                 </div>
 
-                <p
-                  className={`text-base text-[#F7F4EE] ${
-                    isAr
-                      ? "font-serif-ar font-bold leading-relaxed"
-                      : "font-display-en italic leading-relaxed"
-                  }`}
-                >
+                <p className="text-base sm:text-lg font-extrabold leading-relaxed text-[#090A0F]">
                   {isAr
                     ? `«${NIDAL_SIGNATURE_LINE.ar}»`
                     : `“${NIDAL_SIGNATURE_LINE.en}”`}
                 </p>
 
-                <p className="text-xs leading-relaxed text-[#C8C2B8]">
+                <p className="text-xs leading-relaxed text-[#525866]">
                   {SITE_IDENTITY.associationContextNote[typedLocale]}
                 </p>
 
                 <div className="pt-1">
-                  <NidalSignature className="h-auto w-48" color="#D4BE96" />
+                  <NidalSignature className="h-auto w-44" color="#090A0F" />
                 </div>
 
-                <div className="flex flex-wrap gap-4 border-t border-white/10 pt-4 text-xs">
+                <div className="flex flex-wrap gap-4 border-t border-black/[0.06] pt-4 text-xs">
                   <a
                     href={SITE_IDENTITY.socialLinks.alarabiya.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-medium text-[#D4BE96] hover:text-[#F7F4EE]"
+                    className="inline-flex items-center gap-1 font-extrabold text-[#090A0F] hover:text-[#FF1E2D]"
                   >
                     <span>{SITE_IDENTITY.socialLinks.alarabiya.label[typedLocale]}</span>
-                    <ExternalLink className="h-3 w-3" />
+                    <ExternalLink className="h-3 w-3 text-[#FF1E2D]" />
                   </a>
                   <a
                     href={SITE_IDENTITY.socialLinks.alhadath.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-medium text-[#D4BE96] hover:text-[#F7F4EE]"
+                    className="inline-flex items-center gap-1 font-extrabold text-[#090A0F] hover:text-[#FF1E2D]"
                   >
                     <span>{SITE_IDENTITY.socialLinks.alhadath.label[typedLocale]}</span>
-                    <ExternalLink className="h-3 w-3" />
+                    <ExternalLink className="h-3 w-3 text-[#FF1E2D]" />
                   </a>
                 </div>
               </div>
@@ -311,18 +286,14 @@ export default async function ConnectPage({
         </div>
       </section>
 
-      {/* Warm Alabaster Band: Speaking, Moderation & Media Training */}
-      <section className="bg-[#F7F4EE] py-16 text-[#121722] sm:py-20">
+      {/* Studio Grey Band: Speaking, Moderation & Media Training */}
+      <section className="bg-[#F3F4F7] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-semibold text-[#B81D26]">
+          <div className="max-w-2xl space-y-1.5">
+            <span className="text-xs font-extrabold tracking-wider text-[#FF1E2D] uppercase">
               {isAr ? "مجالات التعاون والمشاركة" : "SPEAKING, MODERATION & TRAINING"}
             </span>
-            <h2
-              className={`text-2xl sm:text-3xl text-[#121722] ${
-                isAr ? "font-display-ar font-bold" : "font-display-en font-semibold"
-              }`}
-            >
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#090A0F]">
               {isAr
                 ? "حضور مهني على الشاشة ومنصات الحوار والتدريب"
                 : "On-Air Presenting, Stage Moderation & Newsroom Workshops"}
@@ -335,21 +306,15 @@ export default async function ConnectPage({
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-[#141A24]/10 bg-white p-6 sm:p-7 shadow-sm space-y-3"
+                  className="rounded-[28px] bg-white p-6 sm:p-7 shadow-xs space-y-3"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EFEAE0] text-[#B81D26]">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF0F1] text-[#FF1E2D]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3
-                    className={`text-lg text-[#121722] ${
-                      isAr
-                        ? "font-display-ar font-bold"
-                        : "font-display-en font-semibold"
-                    }`}
-                  >
+                  <h3 className="text-lg font-extrabold text-[#090A0F]">
                     {area.title[typedLocale]}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#4E4940]">
+                  <p className="text-sm leading-relaxed text-[#525866]">
                     {area.desc[typedLocale]}
                   </p>
                 </div>
@@ -360,7 +325,7 @@ export default async function ConnectPage({
           <div className="pt-2 text-center">
             <Link
               href={`/${typedLocale}`}
-              className="inline-flex items-center gap-2 rounded-full border border-[#121722]/20 bg-white px-5 py-2.5 text-xs font-semibold text-[#121722] transition hover:bg-[#121722] hover:text-[#F7F4EE]"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-extrabold text-[#090A0F] shadow-xs transition hover:bg-[#090A0F] hover:text-white"
             >
               <span>
                 {isAr ? "العودة إلى الصفحة الرئيسية" : "Return to Home"}

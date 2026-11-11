@@ -19,19 +19,19 @@ import {
 interface JourneyChapterSectionProps {
   chapter: JourneyChapter;
   locale: Locale;
+  isAlternateGrey?: boolean;
 }
 
 export function JourneyChapterSection({
   chapter,
   locale,
+  isAlternateGrey = false,
 }: JourneyChapterSectionProps) {
   const isAr = locale === "ar";
+  const ArrowIcon = isAr ? ArrowUpLeft : ArrowUpRight;
   const linkedWorks = WORK_ITEMS.filter((w) =>
     chapter.linkedWorkSlugs.includes(w.slug)
   );
-
-  // Chapter III uses Warm Alabaster Paper monograph contrast
-  const isIvoryMonograph = chapter.rhythmStyle === "newsroom-monograph";
 
   const ChapterIcon =
     chapter.rhythmStyle === "radio-concentric"
@@ -45,52 +45,23 @@ export function JourneyChapterSection({
   return (
     <article
       id={chapter.id}
-      className={`relative overflow-hidden border-b py-16 sm:py-24 ${
-        isIvoryMonograph
-          ? "border-[#141A24]/10 bg-[#F7F4EE] text-[#121722]"
-          : chapter.rhythmStyle === "radio-concentric"
-          ? "border-white/8 bg-[#0A0E17] text-[#F7F4EE]"
-          : chapter.rhythmStyle === "television-split"
-          ? "border-white/8 bg-[#07090E] text-[#F7F4EE]"
-          : "border-white/8 bg-[#0C101B] text-[#F7F4EE]"
+      className={`border-b border-black/[0.06] py-16 sm:py-24 ${
+        isAlternateGrey ? "bg-[#F3F4F7]" : "bg-white"
       }`}
     >
-      {/* Chapter I Subtle Acoustic Concentric Rings */}
-      {chapter.rhythmStyle === "radio-concentric" && (
-        <svg
-          viewBox="0 0 1200 800"
-          fill="none"
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
-        >
-          <circle cx="900" cy="400" r="220" stroke="#D4BE96" strokeOpacity="0.25" strokeWidth="1" />
-          <circle cx="900" cy="400" r="320" stroke="#D4BE96" strokeOpacity="0.18" strokeWidth="1" />
-          <circle cx="900" cy="400" r="420" stroke="#D4BE96" strokeOpacity="0.12" strokeWidth="1" />
-          <circle cx="900" cy="400" r="520" stroke="#E6242F" strokeOpacity="0.22" strokeWidth="1" />
-        </svg>
-      )}
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Chapter Header Bar */}
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-current/12 pb-5">
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-black/[0.07] pb-5">
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E6242F]/40 bg-[#E6242F]/10 text-[#E6242F]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFF0F1] text-[#FF1E2D]">
               <ChapterIcon className="h-4 w-4" />
             </span>
-            <span
-              className={`text-xs font-semibold ${
-                isIvoryMonograph ? "text-[#B81D26]" : "text-[#D4BE96]"
-              } ${isAr ? "" : "font-mono-code uppercase tracking-[0.16em]"}`}
-            >
+            <span className="text-xs font-extrabold tracking-wider text-[#FF1E2D] uppercase">
               {chapter.eraBadge[locale]}
             </span>
           </div>
 
-          <span
-            className={`font-display-en text-4xl font-light tracking-widest ${
-              isIvoryMonograph ? "text-[#121722]/20" : "text-[#D4BE96]/25"
-            }`}
-          >
+          <span className="font-mono-code text-3xl sm:text-4xl font-extrabold text-black/15">
             {chapter.number}
           </span>
         </div>
@@ -103,38 +74,20 @@ export function JourneyChapterSection({
               chapter.rhythmStyle === "television-split" ? "lg:order-2" : ""
             }`}
           >
-            <div className="space-y-3">
-              <h2
-                className={`leading-tight ${
-                  isAr
-                    ? "font-display-ar text-3xl sm:text-4xl lg:text-5xl font-bold"
-                    : "font-display-en text-3xl sm:text-4xl lg:text-5xl font-semibold"
-                }`}
-              >
+            <div className="space-y-2.5">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#090A0F] leading-tight">
                 {chapter.title[locale]}
               </h2>
-              <p
-                className={`text-sm sm:text-base font-medium ${
-                  isIvoryMonograph ? "text-[#B81D26]" : "text-[#D4BE96]"
-                }`}
-              >
+              <p className="text-sm sm:text-base font-extrabold text-[#FF1E2D]">
                 {chapter.subtitle[locale]}
               </p>
             </div>
 
-            <p
-              className={`text-base sm:text-lg leading-[1.85] font-medium ${
-                isIvoryMonograph ? "text-[#121722]" : "text-[#F7F4EE]"
-              }`}
-            >
+            <p className="text-base sm:text-lg leading-[1.85] font-bold text-[#090A0F]">
               {chapter.leadParagraph[locale]}
             </p>
 
-            <div
-              className={`space-y-4 text-sm sm:text-base leading-[1.85] ${
-                isIvoryMonograph ? "text-[#3A3731]" : "text-[#C8C2B8]"
-              }`}
-            >
+            <div className="space-y-4 text-sm sm:text-base leading-[1.85] text-[#525866]">
               {chapter.bodyParagraphs[locale].map((para, idx) => (
                 <p key={idx}>{para}</p>
               ))}
@@ -143,26 +96,14 @@ export function JourneyChapterSection({
             {/* Pull Quote */}
             {chapter.pullQuote && (
               <blockquote
-                className={`my-6 rounded-2xl border-s-4 border-[#E6242F] p-5 sm:p-6 ${
-                  isIvoryMonograph
-                    ? "bg-[#EFEAE0] text-[#121722]"
-                    : "bg-white/[0.04] text-[#F7F4EE]"
+                className={`my-6 rounded-[28px] border-s-4 border-[#FF1E2D] p-6 ${
+                  isAlternateGrey ? "bg-white shadow-2xs" : "bg-[#F3F4F7]"
                 }`}
               >
-                <p
-                  className={`text-lg sm:text-2xl leading-relaxed ${
-                    isAr
-                      ? "font-serif-ar font-bold"
-                      : "font-display-en italic"
-                  }`}
-                >
+                <p className="text-lg sm:text-xl font-extrabold leading-relaxed text-[#090A0F]">
                   {chapter.pullQuote.text[locale]}
                 </p>
-                <footer
-                  className={`mt-2 text-xs font-medium ${
-                    isIvoryMonograph ? "text-[#5E584E]" : "text-[#D4BE96]"
-                  }`}
-                >
+                <footer className="mt-2 text-xs font-bold text-[#525866]">
                   — {chapter.pullQuote.attribution[locale]}
                 </footer>
               </blockquote>
@@ -170,11 +111,7 @@ export function JourneyChapterSection({
 
             {/* Chapter Milestones */}
             <div className="pt-3 space-y-4">
-              <h3
-                className={`text-xs font-semibold ${
-                  isAr ? "" : "uppercase tracking-[0.16em]"
-                } ${isIvoryMonograph ? "text-[#5E584E]" : "text-[#D4BE96]"}`}
-              >
+              <h3 className="text-xs font-extrabold tracking-wider text-[#FF1E2D] uppercase">
                 {isAr ? "أبرز محطات هذا الفصل" : "KEY CHAPTER MILESTONES"}
               </h3>
 
@@ -182,49 +119,43 @@ export function JourneyChapterSection({
                 {chapter.milestones.map((ms) => (
                   <div
                     key={ms.id}
-                    className={`rounded-2xl border p-5 transition ${
-                      isIvoryMonograph
-                        ? "border-[#141A24]/10 bg-white shadow-sm text-[#121722]"
-                        : "border-white/10 bg-white/[0.03] text-[#F7F4EE] hover:border-[#D4BE96]/30"
+                    className={`rounded-[28px] p-6 transition ${
+                      isAlternateGrey
+                        ? "bg-white shadow-2xs"
+                        : "bg-[#F3F4F7]"
                     }`}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="font-mono-code text-xs font-semibold text-[#E6242F]">
+                      <span className="font-mono-code text-xs font-extrabold text-[#FF1E2D]">
                         {ms.period[locale]}
                       </span>
                       <span
-                        className={`rounded-full px-3 py-0.5 text-[11px] font-medium ${
-                          isIvoryMonograph
-                            ? "bg-[#EFEAE0] text-[#121722]"
-                            : "bg-white/[0.08] text-[#D4BE96]"
+                        className={`rounded-full px-3.5 py-1 text-[11px] font-extrabold text-[#090A0F] ${
+                          isAlternateGrey ? "bg-[#F3F4F7]" : "bg-white"
                         }`}
                       >
                         {ms.natureBadge[locale]}
                       </span>
                     </div>
 
-                    <h4 className="mt-2 text-base font-bold">
+                    <h4 className="mt-2 text-base font-extrabold text-[#090A0F]">
                       {ms.organization[locale]}{" "}
-                      <span className="font-normal opacity-85">
+                      <span className="font-semibold text-[#525866]">
                         · {ms.role[locale]}
                       </span>
                     </h4>
 
-                    <p
-                      className={`mt-1.5 text-sm leading-relaxed ${
-                        isIvoryMonograph ? "text-[#4A463E]" : "text-[#C8C2B8]"
-                      }`}
-                    >
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#525866]">
                       {ms.summary[locale]}
                     </p>
 
-                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-current/10 pt-3 text-xs opacity-80">
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-black/[0.06] pt-3 text-xs font-semibold text-[#525866]">
                       <span>{ms.sourceNote[locale]}</span>
                       <a
                         href={ms.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-medium underline underline-offset-4 hover:text-[#E6242F]"
+                        className="inline-flex items-center gap-1 font-bold text-[#090A0F] hover:text-[#FF1E2D]"
                       >
                         <span>{UI_LABELS.common.sourceLink[locale]}</span>
                         <ExternalLink className="h-3 w-3" />
@@ -238,11 +169,7 @@ export function JourneyChapterSection({
             {/* Linked Curated Works */}
             {linkedWorks.length > 0 && (
               <div className="pt-3">
-                <h3
-                  className={`mb-3 text-xs font-semibold ${
-                    isAr ? "" : "uppercase tracking-[0.16em]"
-                  } ${isIvoryMonograph ? "text-[#5E584E]" : "text-[#D4BE96]"}`}
-                >
+                <h3 className="mb-3 text-xs font-extrabold tracking-wider text-[#525866] uppercase">
                   {isAr
                     ? "أعمال مختارة مرتبطة بهذا الفصل"
                     : "SELECTED WORKS FROM THIS CHAPTER"}
@@ -252,18 +179,10 @@ export function JourneyChapterSection({
                     <Link
                       key={work.slug}
                       href={`/${locale}/work/${work.slug}`}
-                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition ${
-                        isIvoryMonograph
-                          ? "border-[#121722]/20 bg-[#121722] text-[#F7F4EE] hover:bg-[#1e2638]"
-                          : "border-[#D4BE96]/30 bg-white/[0.05] text-[#F7F4EE] hover:border-[#D4BE96]"
-                      }`}
+                      className="inline-flex items-center gap-2 rounded-full bg-[#090A0F] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#FF1E2D]"
                     >
                       <span>{work.title[locale]}</span>
-                      {isAr ? (
-                        <ArrowUpLeft className="h-3.5 w-3.5 text-[#E6242F]" />
-                      ) : (
-                        <ArrowUpRight className="h-3.5 w-3.5 text-[#E6242F]" />
-                      )}
+                      <ArrowIcon className="h-3.5 w-3.5" />
                     </Link>
                   ))}
                 </div>
@@ -278,13 +197,11 @@ export function JourneyChapterSection({
             }`}
           >
             <figure
-              className={`overflow-hidden rounded-3xl border p-3 shadow-2xl ${
-                isIvoryMonograph
-                  ? "border-[#141A24]/12 bg-white"
-                  : "border-white/12 bg-white/[0.03]"
+              className={`overflow-hidden rounded-[36px] p-3.5 shadow-[0_24px_60px_rgba(9,10,15,0.08)] ${
+                isAlternateGrey ? "bg-white" : "bg-[#F3F4F7]"
               }`}
             >
-              <div className="relative overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-[26px]">
                 <picture className="block w-full">
                   <source srcSet={chapter.portraitAvif} type="image/avif" />
                   <img
@@ -296,11 +213,7 @@ export function JourneyChapterSection({
                   />
                 </picture>
               </div>
-              <figcaption
-                className={`mt-3 px-2 pb-1 text-xs leading-relaxed ${
-                  isIvoryMonograph ? "text-[#4A463E]" : "text-[#C8C2B8]"
-                }`}
-              >
+              <figcaption className="mt-3 px-2 pb-1 text-xs font-medium leading-relaxed text-[#525866]">
                 <p>{chapter.portraitCaption[locale]}</p>
               </figcaption>
             </figure>

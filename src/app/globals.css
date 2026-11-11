@@ -2,166 +2,72 @@
 
 @layer base {
   :root {
-    --bg-obsidian: #07090e;
-    --bg-studio: #0d111a;
-    --bg-elevated: #131926;
-    --bg-alabaster: #f7f4ee;
-    --bg-sand: #efeae0;
-    --text-ivory: #f7f4ee;
-    --text-sand: #d6cfc2;
-    --text-muted: #949ba8;
-    --ink-dark: #111622;
-    --accent-crimson: #e6242f;
-    --accent-gold: #d4be96;
+    --bg-white: #ffffff;
+    --bg-studio-grey: #f3f4f7;
+    --ink-black: #090a0f;
+    --ink-slate: #525866;
+    --ink-muted: #717784;
+    --accent-red: #ff1e2d;
+    --accent-red-soft: #fff0f1;
     --font-readex: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
-    --font-amiri: "Amiri", "Traditional Arabic", Georgia, serif;
-    --font-cormorant: "Cormorant Garamond", "Instrument Serif", Georgia, serif;
     --font-jakarta: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
     --font-jetbrains: "JetBrains Mono", Consolas, monospace;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-obsidian);
-    color: var(--text-ivory);
+    background-color: #ffffff;
+    color: #090a0f;
   }
 
   body {
-    background-color: var(--bg-obsidian);
-    color: var(--text-ivory);
+    background-color: #ffffff;
+    color: #090a0f;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent-gold);
+    outline: 2px solid #ff1e2d;
     outline-offset: 3px;
   }
 }
 
-/* Editorial Typography System */
-.font-display-ar {
-  font-family: var(--font-readex), system-ui, sans-serif;
-  letter-spacing: -0.01em;
-}
-
-.font-serif-ar {
-  font-family: var(--font-amiri), Georgia, serif;
-}
-
+/* Modern 2026 Geometric Sans Typography System */
+.font-modern-ar,
+.font-display-ar,
 .font-sans-ar {
-  font-family: var(--font-readex), system-ui, -apple-system, sans-serif;
-}
-
-.font-display-en {
-  font-family: var(--font-cormorant), Georgia, serif;
-}
-
-.font-sans-en {
-  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-}
-
-.font-display {
-  font-family: var(--font-readex), var(--font-cormorant), Georgia, sans-serif;
-}
-
-.font-mono-code {
-  font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
-}
-
-.font-modern-ar {
-  font-family: "Alexandria", "IBM Plex Sans Arabic", "Readex Pro", system-ui, sans-serif;
+  font-family: "Alexandria", "IBM Plex Sans Arabic", var(--font-readex), system-ui, -apple-system, sans-serif;
 }
 
 .font-plex-ar {
   font-family: "IBM Plex Sans Arabic", "Alexandria", system-ui, sans-serif;
 }
 
-.font-modern-en {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+.font-modern-en,
+.font-display-en,
+.font-sans-en {
+  font-family: "Plus Jakarta Sans", var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
 .font-syne {
   font-family: "Syne", "Plus Jakarta Sans", sans-serif;
 }
 
-/*Elevated Surface Utilities*/
-.surface-glass-dark {
-  background: linear-gradient(
-    165deg,
-    rgba(19, 25, 38, 0.86) 0%,
-    rgba(11, 15, 24, 0.94) 100%
-  );
-  border: 1px solid rgba(212, 190, 150, 0.16);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+.font-mono-code {
+  font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 }
 
-.surface-glass-dark:hover {
-  border-color: rgba(212, 190, 150, 0.36);
-}
-
-.surface-paper {
-  background-color: #f7f4ee;
-  color: #111622;
-}
-
-.surface-paper-card {
+/* Modern Pure White Studio Surfaces */
+.studio-card-white {
   background-color: #ffffff;
-  border: 1px solid rgba(17, 22, 34, 0.09);
-  box-shadow: 0 14px 36px rgba(17, 22, 34, 0.05);
+  border: 1px solid rgba(9, 10, 15, 0.06);
+  box-shadow: 0 16px 48px rgba(9, 10, 15, 0.05);
 }
 
-/* "In Focus" Studio Spotlight Reveal Mask */
-.in-focus-spotlight-layer {
-  pointer-events: none;
-  will-change: opacity;
-  -webkit-mask-image: radial-gradient(
-    520px circle at var(--spot-x, 50%) var(--spot-y, 44%),
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.72) 42%,
-    rgba(0, 0, 0, 0.16) 70%,
-    rgba(0, 0, 0, 0) 90%
-  );
-  mask-image: radial-gradient(
-    520px circle at var(--spot-x, 50%) var(--spot-y, 44%),
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.72) 42%,
-    rgba(0, 0, 0, 0.16) 70%,
-    rgba(0, 0, 0, 0) 90%
-  );
-}
-
-[data-spotlight="static"] .in-focus-spotlight-layer {
-  -webkit-mask-image: radial-gradient(
-    720px ellipse at 50% 42%,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.42) 55%,
-    rgba(0, 0, 0, 0.08) 85%
-  );
-  mask-image: radial-gradient(
-    720px ellipse at 50% 42%,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.42) 55%,
-    rgba(0, 0, 0, 0.08) 85%
-  );
-}
-
-@media (hover: none), (prefers-reduced-motion: reduce) {
-  .in-focus-spotlight-layer {
-    -webkit-mask-image: radial-gradient(
-      720px ellipse at 50% 42%,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.42) 55%,
-      rgba(0, 0, 0, 0.08) 85%
-    ) !important;
-    mask-image: radial-gradient(
-      720px ellipse at 50% 42%,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.42) 55%,
-      rgba(0, 0, 0, 0.08) 85%
-    ) !important;
-  }
+.studio-card-grey {
+  background-color: #f3f4f7;
 }
 
 @keyframes signatureAppear {
@@ -176,13 +82,13 @@
 }
 
 .signature-reveal {
-  animation: signatureAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: signatureAppear 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes subtleFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   100% {
     opacity: 1;
@@ -191,7 +97,7 @@
 }
 
 .editorial-reveal {
-  animation: subtleFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: subtleFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -158,7 +158,7 @@ export function ConceptTwoBento({ locale }: { locale: Locale }) {
                 {isAr ? "المسيرة الإعلامية" : "BROADCAST JOURNEY"}
               </div>
               <p className="text-xl sm:text-2xl font-extrabold text-[#090A0F] leading-relaxed">
-                «{NIDAL_SIGNATURE_LINE[locale]}»
+                {isAr ? `«${NIDAL_SIGNATURE_LINE.ar}»` : `“${NIDAL_SIGNATURE_LINE.en}”`}
               </p>
             </div>
 

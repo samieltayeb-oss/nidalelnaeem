@@ -131,14 +131,14 @@ export function ConceptThreeSplitStage({ locale }: { locale: Locale }) {
               className={`font-extrabold tracking-tight text-white drop-shadow-2xl ${
                 isAr
                   ? "text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.12]"
-                  : "font-syne text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.02]"
+                  : "text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.03]"
               }`}
             >
               {SITE_IDENTITY.name[locale]}
             </h1>
 
             <p className="text-xl sm:text-2xl font-bold text-white/95 leading-relaxed">
-              «{NIDAL_SIGNATURE_LINE[locale]}»
+              {isAr ? `«${NIDAL_SIGNATURE_LINE.ar}»` : `“${NIDAL_SIGNATURE_LINE.en}”`}
             </p>
 
             <p className="max-w-xl text-sm sm:text-base leading-[1.8] text-white/70">
@@ -179,7 +179,7 @@ export function ConceptThreeSplitStage({ locale }: { locale: Locale }) {
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-6 sm:px-10 lg:grid-cols-4">
             {CV_IMPACT_STATS.map((st, idx) => (
               <div key={idx} className="flex items-baseline gap-3">
-                <span className="font-mono-code text-2xl sm:text-3xl font-extrabold text-white">
+                <span className="font-mono-code text-2xl sm:text-3xl font-extrabold text-white whitespace-nowrap shrink-0">
                   {st.value[locale]}
                 </span>
                 <div>

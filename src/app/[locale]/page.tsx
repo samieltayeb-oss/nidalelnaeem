@@ -5,7 +5,9 @@ import {
   ArrowUpLeft,
   ArrowUpRight,
   Check,
+  CheckCircle2,
   Cpu,
+  ExternalLink,
   GraduationCap,
   Mail,
   MapPin,
@@ -18,6 +20,7 @@ import {
   WORK_ITEMS,
   UI_LABELS,
 } from "@/data/portfolio-data";
+import { SELECTED_VIDEO_WORKS } from "@/data/selected-video-work";
 import {
   CV_BIO_SUMMARY,
   CV_CAPABILITIES,
@@ -61,6 +64,9 @@ export default async function LocaleHomePage({
   );
 
   const previewLifeMoments = LIFE_MOMENTS.slice(0, 4);
+  const featuredBroadcastReels = SELECTED_VIDEO_WORKS.filter(
+    (v) => v.featuredOnHome
+  );
 
   return (
     <div className="bg-white text-[#090A0F]">
@@ -242,7 +248,7 @@ export default async function LocaleHomePage({
         </div>
       </section>
 
-      {/* 2. STUDIO GREY BAND: FEATURED ON-SCREEN VIDEO STAGE + 3 ROUNDED CARDS */}
+      {/* 2. STUDIO GREY BAND: SELECTED BROADCAST REELS + INTERACTIVE VIDEO STAGE */}
       <section
         id="on-screen-showcase"
         aria-labelledby="on-screen-showcase-heading"
@@ -252,25 +258,89 @@ export default async function LocaleHomePage({
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <span className="text-xs font-extrabold tracking-wider text-[#FF1E2D] uppercase">
-                {isAr ? "الأعمال المرئية · على الشاشة" : "ON SCREEN · FEATURED BROADCASTS"}
+                {isAr
+                  ? "ملف الأعمال المرئية · العربية والحدث (15 فيديو)"
+                  : "SELECTED VIDEO WORK · AL ARABIYA & AL HADATH (15 VIDEOS)"}
               </span>
               <h2
                 id="on-screen-showcase-heading"
                 className="mt-1 text-3xl sm:text-4xl font-extrabold text-[#090A0F]"
               >
                 {isAr
-                  ? "مختارات الفيديو والحوارات التلفزيونية"
-                  : "Featured Video Segments & Stage Talks"}
+                  ? "مختارات التقديم الإخباري والفيديو الرقمي"
+                  : "Selected Broadcast Reels & Video Work"}
               </h2>
             </div>
 
             <Link
               href={`/${typedLocale}/on-screen`}
-              className="inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-xs font-extrabold text-[#090A0F] shadow-xs transition hover:bg-[#090A0F] hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#090A0F] px-5 py-3 text-xs font-extrabold text-white shadow-xs transition hover:bg-[#FF1E2D]"
             >
-              <span>{isAr ? "الأرشيف المرئي الكامل" : "View All Videos"}</span>
+              <span>
+                {isAr
+                  ? "استعراض جميع الفيديوهات المختارة (15)"
+                  : "View All 15 Selected Videos"}
+              </span>
               <ArrowIcon className="h-3.5 w-3.5" />
             </Link>
+          </div>
+
+          {/* 4 Flagship 9:16 Broadcast Reels (Al Arabiya, Al Hadath & Al Arabiya 24) */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredBroadcastReels.map((reel) => (
+              <a
+                key={reel.id}
+                href={reel.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mx-auto flex w-full max-w-sm sm:max-w-none flex-col justify-between overflow-hidden rounded-[32px] bg-white p-3 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+              >
+                <div>
+                  <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[24px] bg-[#090A0F]">
+                    <picture className="block h-full w-full">
+                      {reel.posterAvif && (
+                        <source srcSet={reel.posterAvif} type="image/avif" />
+                      )}
+                      <img
+                        src={reel.posterWebp}
+                        alt={reel.title[typedLocale]}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                      />
+                    </picture>
+                    <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 font-mono-code text-[11px] font-extrabold text-[#090A0F] shadow-md backdrop-blur-md">
+                      #{reel.number}
+                    </span>
+                  </div>
+
+                  <div className="p-2.5 pt-4 space-y-2">
+                    <div className="flex flex-wrap items-center justify-between gap-1.5">
+                      <span className="rounded-full bg-[#FFF0F1] px-3 py-0.5 text-[11px] font-extrabold text-[#FF1E2D]">
+                        {reel.networkBadge[typedLocale]}
+                      </span>
+                      <span className="font-mono-code text-[11px] font-semibold text-[#525866]">
+                        {reel.dateDisplay[typedLocale]}
+                      </span>
+                    </div>
+
+                    <h3 className="text-base font-extrabold text-[#090A0F] leading-snug group-hover:text-[#FF1E2D] transition-colors line-clamp-2">
+                      {reel.title[typedLocale]}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="mt-2 flex items-center justify-between border-t border-black/[0.06] px-2.5 pt-3 pb-1 text-xs">
+                  <span className="inline-flex items-center gap-1.5 font-bold text-[#090A0F]">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#FF1E2D]" />
+                    <span>{reel.formatBadge[typedLocale]}</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1 font-extrabold text-[#FF1E2D]">
+                    <span>{isAr ? "مشاهدة" : "Watch"}</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </span>
+                </div>
+              </a>
+            ))}
           </div>
 
           {/* Lead Interactive Video Feature */}

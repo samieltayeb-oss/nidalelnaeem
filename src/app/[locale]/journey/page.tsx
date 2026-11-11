@@ -1,12 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpLeft, ArrowUpRight, Briefcase } from "lucide-react";
+import {
+  ArrowUpLeft,
+  ArrowUpRight,
+  Briefcase,
+  GraduationCap,
+  Cpu,
+  Languages,
+  Sparkles,
+} from "lucide-react";
 import {
   Locale,
   JOURNEY_CHAPTERS,
   SITE_IDENTITY,
 } from "@/data/portfolio-data";
+import {
+  NIDAL_SIGNATURE_LINE,
+  CV_EXPERIENCE_TIMELINE,
+  CV_EDUCATION,
+  CV_NEWSROOM_TOOLS,
+  CV_LANGUAGES,
+  CV_CAPABILITIES,
+} from "@/data/cv-profile-data";
 import { JourneyChapterSection } from "@/components/journey/JourneyChapterSection";
 import { AlHadathMark, LinkedInIcon } from "@/components/brand/BrandVectors";
 
@@ -21,50 +37,79 @@ export default async function JourneyPage({
   const isAr = typedLocale === "ar";
 
   return (
-    <div className="bg-[#060E16]">
-      {/* Documentary Page Header */}
-      <section className="relative overflow-hidden border-b border-[#F4EEE3]/10 bg-[radial-gradient(ellipse_at_top,#102538_0%,#060E16_75%)] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-5">
-            <div className="inline-flex items-center gap-3 rounded border border-[#C8B692]/30 bg-[#0B1926]/80 px-3.5 py-1.5 text-xs text-[#C8B692]">
+    <div className="bg-[#07090E]">
+      {/* Page Hero */}
+      <section className="relative overflow-hidden border-b border-white/8 bg-[radial-gradient(ellipse_at_top,#121826_0%,#07090E_75%)] py-16 sm:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-65"
+          style={{
+            background:
+              "radial-gradient(600px circle at 18% 20%, rgba(212, 190, 150, 0.10), transparent 70%), radial-gradient(520px circle at 82% 18%, rgba(230, 36, 47, 0.08), transparent 70%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-6">
+            <div className="inline-flex items-center gap-3 rounded-full border border-[#D4BE96]/30 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-[#D4BE96] backdrop-blur-md">
               <AlHadathMark className="h-4 w-auto" />
               <span>
                 {isAr
-                  ? "السيرة الوثائقية · أربعة فصول موثقة"
-                  : "DOCUMENTARY CHRONICLE · FOUR VERIFIED CHAPTERS"}
+                  ? "السيرة المهنية الكاملة · أربعة فصول"
+                  : "CAREER MONOGRAPH & OFFICIAL CV · FOUR CHAPTERS"}
               </span>
             </div>
 
             <h1
-              className={`text-[#F4EEE3] leading-tight ${
+              className={`text-[#F7F4EE] leading-[1.15] ${
                 isAr
-                  ? "font-display-ar text-4xl sm:text-5xl lg:text-6xl font-bold"
+                  ? "font-display-ar text-3xl sm:text-5xl lg:text-6xl font-bold"
                   : "font-display-en text-4xl sm:text-5xl lg:text-6xl font-semibold"
               }`}
             >
               {isAr
-                ? "المسيرة: من أثير الإذاعة في الخرطوم إلى غرف الأخبار العربية"
-                : "The Journey: From Khartoum’s Radio Console to the Pan-Arab Newsroom"}
+                ? "المسيرة المهنية لنضال النعيم"
+                : "The Career & Broadcast Journey of Nidal Elnaeem"}
             </h1>
 
-            <p className="text-base sm:text-lg leading-relaxed text-[#D1C7B8]">
+            {/* Nidal's Exact Signature Quote */}
+            <blockquote className="rounded-2xl border border-[#D4BE96]/25 bg-white/[0.03] px-5 py-4 sm:px-6 sm:py-5 backdrop-blur-sm">
+              <p
+                className={`text-[#F7F4EE] ${
+                  isAr
+                    ? "font-serif-ar text-xl sm:text-2xl font-bold leading-relaxed"
+                    : "font-display-en text-xl sm:text-2xl italic leading-relaxed"
+                }`}
+              >
+                {isAr
+                  ? `«${NIDAL_SIGNATURE_LINE.ar}»`
+                  : `“${NIDAL_SIGNATURE_LINE.en}”`}
+              </p>
+            </blockquote>
+
+            <p className="max-w-3xl text-base sm:text-lg leading-[1.85] text-[#C8C2B8]">
               {isAr
-                ? "لا تُقرأ مسيرة نضال النعيم كقائمة وظائف جامدة، بل كرحلة متصلة لصقل الصوت والكلمة؛ بدأت خلف ميكروفون إذاعة «هلا 96 إف إم»، وتوسعت عبر العمل المتزامن في التلفزيون والمنصات الرقمية، حتى استقرت في صياغة الخبر وتقديمه عبر «الحدث» و«العربية»."
-                : "Nidal Elnaeem’s trajectory is not a linear checklist of job titles—it is an evolving study in voice, reporting, and audience trust, moving from live radio in Khartoum through concurrent television roles to senior digital writing and presenting with Al Hadath and Al Arabiya."}
+                ? "رحلة مهنية متصلة بدأت عام 2015 خلف ميكروفون إذاعة «هلا 96 إف إم» في الخرطوم، وتوسعت عبر البث التلفزيوني المباشر في «قناة الشروق» والمجلة المرئية لـ «سوداني»، وصولاً إلى أكثر من سبع سنوات من التقديم الإخباري وصناعة المحتوى الرقمي في قناتي «العربية» و«الحدث» بين دبي والرياض."
+                : "An evolving career that began behind the microphone of Hala 96 FM in Khartoum in 2015, expanded through live television on Ashorooq TV and Sudani’s monthly video magazine, and grew into more than seven years of news presenting, reporting, and senior social media journalism at Al Arabiya and Al Hadath across Dubai and Riyadh."}
             </p>
 
-            {/* Chapter Quick-Jump Index */}
+            {/* Chapter Quick-Jump Pills */}
             <nav
               aria-label={isAr ? "فهرس الفصول" : "Chapter Index"}
-              className="pt-4 flex flex-wrap gap-2.5"
+              className="pt-2 flex flex-wrap gap-2.5"
             >
+              <a
+                href="#cv-experience"
+                className="inline-flex items-center gap-2 rounded-full border border-[#E6242F]/40 bg-[#E6242F]/15 px-4 py-2 text-xs font-semibold text-[#F7F4EE] transition hover:bg-[#E6242F]/25"
+              >
+                <span>{isAr ? "السجل الوظيفي الكامل" : "Full CV Timeline"}</span>
+              </a>
               {JOURNEY_CHAPTERS.map((ch) => (
                 <a
                   key={ch.id}
                   href={`#${ch.id}`}
-                  className="inline-flex items-center gap-2 rounded border border-[#F4EEE3]/15 bg-[#0B1926]/90 px-3.5 py-2 text-xs font-medium text-[#F4EEE3] transition hover:border-[#C8B692]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-xs font-medium text-[#EAE4D9] transition hover:border-[#D4BE96]/50 hover:bg-white/[0.08]"
                 >
-                  <span className="font-mono-code text-[#ED2530]">{ch.number}</span>
+                  <span className="font-mono-code text-[#D4BE96]">{ch.number}</span>
                   <span>{ch.title[typedLocale]}</span>
                 </a>
               ))}
@@ -73,18 +118,32 @@ export default async function JourneyPage({
         </div>
       </section>
 
-      {/* Structured Career Experience Summary (Matching Official LinkedIn Experience) */}
-      <section className="border-b border-[#F4EEE3]/10 bg-[#050B12] py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2.5">
-              <Briefcase className="h-4 w-4 text-[#ED2530]" />
+      {/* Band 1 (Warm Sand #EFEAE0): Official CV & LinkedIn Experience Timeline */}
+      <section
+        id="cv-experience"
+        className="border-b border-[#141A24]/10 bg-[#EFEAE0] py-16 text-[#121722] sm:py-24"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#141A24]/12 pb-6">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#B81D26]">
+                <Briefcase className="h-4 w-4" />
+                <span className={isAr ? "" : "font-mono-code uppercase tracking-[0.16em]"}>
+                  {isAr
+                    ? "السجل المهني والوظيفي · السيرة الذاتية ولينكدإن"
+                    : "OFFICIAL EXPERIENCE RECORD · CV & LINKEDIN"}
+                </span>
+              </div>
               <h2
-                className={`text-lg sm:text-xl font-bold text-[#F4EEE3] ${
-                  isAr ? "font-display-ar" : "font-display-en"
+                className={`text-2xl sm:text-4xl text-[#121722] ${
+                  isAr
+                    ? "font-display-ar font-bold"
+                    : "font-display-en font-semibold"
                 }`}
               >
-                {isAr ? "ملخص الخبرة المهنية" : "Professional Experience Summary"}
+                {isAr
+                  ? "الخبرات العملية والمناصب الإعلامية (2015 – الحاضر)"
+                  : "Professional Experience & Newsroom Roles (2015 – Present)"}
               </h2>
             </div>
 
@@ -92,138 +151,223 @@ export default async function JourneyPage({
               href={SITE_IDENTITY.socialLinks.linkedin.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm border border-[#C8B692]/35 bg-[#0B1926] px-3.5 py-1.5 text-xs font-medium text-[#C8B692] transition hover:border-[#C8B692] hover:text-[#F4EEE3]"
+              className="inline-flex items-center gap-2.5 rounded-full border border-[#121722]/20 bg-white px-4 py-2 text-xs font-semibold text-[#121722] shadow-sm transition hover:border-[#121722] hover:bg-[#121722] hover:text-[#F7F4EE]"
             >
-              <LinkedInIcon className="h-3.5 w-3.5" />
-              <span>{isAr ? "الحساب المهني على لينكدإن ↗" : "Official LinkedIn Profile ↗"}</span>
+              <LinkedInIcon className="h-3.5 w-3.5 text-[#B81D26]" />
+              <span>
+                {isAr ? "الحساب المهني على لينكدإن ↗" : "Official LinkedIn Profile ↗"}
+              </span>
             </a>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {/* 1. Al Arabiya News Channel */}
-            <div className="flex flex-col justify-between rounded-sm border border-[#C8B692]/35 bg-[#0B1926]/90 p-5 space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="rounded bg-[#ED2530]/20 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-[#ED2530]">
-                    {isAr ? "مارس 2019 – الحاضر" : "Mar 2019 – Present"}
-                  </span>
-                  <span className="text-[11px] text-[#C8B692]">
-                    {isAr ? "دوام كامل" : "Full-time"}
+          {/* 5-Stage Detailed CV Cards */}
+          <div className="space-y-6">
+            {CV_EXPERIENCE_TIMELINE.map((entry) => (
+              <article
+                key={entry.id}
+                className={`rounded-2xl border p-6 sm:p-8 shadow-sm transition ${
+                  entry.isCurrent
+                    ? "border-[#E6242F]/35 bg-white ring-1 ring-[#E6242F]/10"
+                    : "border-[#141A24]/10 bg-[#FAF8F4]"
+                }`}
+              >
+                <div className="flex flex-col gap-4 border-b border-[#141A24]/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="space-y-1">
+                    <div className="flex flex-wrap items-center gap-2.5">
+                      <span
+                        className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${
+                          entry.isCurrent
+                            ? "bg-[#E6242F] text-white"
+                            : "bg-[#121722]/8 text-[#121722]"
+                        }`}
+                      >
+                        {entry.badge[typedLocale]}
+                      </span>
+                      <span className="font-mono-code text-xs font-semibold text-[#645E54]">
+                        {entry.period[typedLocale]}
+                      </span>
+                    </div>
+                    <h3
+                      className={`pt-1 text-xl sm:text-2xl text-[#121722] ${
+                        isAr
+                          ? "font-display-ar font-bold"
+                          : "font-display-en font-semibold"
+                      }`}
+                    >
+                      {entry.organization[typedLocale]}
+                    </h3>
+                  </div>
+
+                  <span className="inline-flex self-start sm:self-center rounded-full border border-[#141A24]/12 bg-[#EFEAE0]/70 px-3.5 py-1 text-xs font-medium text-[#46423B]">
+                    {entry.location[typedLocale]}
                   </span>
                 </div>
-                <h3 className="text-base font-bold text-[#F4EEE3]">
-                  {isAr
-                    ? "كاتبة أولى لمنصات التواصل · مراسلة · مذيعة"
-                    : "Senior Social Media Writer Reporter / Presenter"}
+
+                {/* Roles inside this organization */}
+                <div
+                  className={`mt-5 grid grid-cols-1 gap-6 ${
+                    entry.roles.length > 1 ? "lg:grid-cols-3" : ""
+                  }`}
+                >
+                  {entry.roles.map((role, rIdx) => (
+                    <div
+                      key={rIdx}
+                      className={`space-y-2.5 ${
+                        entry.roles.length > 1
+                          ? "rounded-xl border border-[#141A24]/8 bg-white/80 p-4"
+                          : ""
+                      }`}
+                    >
+                      <h4 className="text-sm sm:text-base font-bold text-[#121722]">
+                        {role.title[typedLocale]}
+                      </h4>
+                      <ul className="space-y-2 text-xs sm:text-sm leading-relaxed text-[#3A3731]">
+                        {role.bullets[typedLocale].map((bullet, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-2.5">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E6242F]" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Band 2 (Warm Alabaster #F7F4EE): Education, Broadcast Tech Stack, Languages & Core Capabilities */}
+      <section className="border-b border-[#141A24]/10 bg-[#F7F4EE] py-16 text-[#121722] sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+            {/* Education & Languages Column */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Software Engineering Degree */}
+              <div className="rounded-2xl border border-[#141A24]/10 bg-white p-6 sm:p-7 shadow-sm space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#B81D26]">
+                    <GraduationCap className="h-4 w-4" />
+                    <span>{isAr ? "المؤهل الأكاديمي" : "EDUCATION"}</span>
+                  </span>
+                  <span className="rounded-full bg-[#EFEAE0] px-3 py-0.5 font-mono-code text-xs font-semibold text-[#121722]">
+                    {CV_EDUCATION.year}
+                  </span>
+                </div>
+                <h3
+                  className={`text-xl text-[#121722] ${
+                    isAr ? "font-display-ar font-bold" : "font-display-en font-semibold"
+                  }`}
+                >
+                  {CV_EDUCATION.degree[typedLocale]}
                 </h3>
-                <p className="text-xs font-semibold text-[#C8B692]">
-                  {isAr ? "قناة العربية · الحدث" : "Al Arabiya News Channel"}
+                <p className="text-sm font-medium text-[#524D44]">
+                  {CV_EDUCATION.university[typedLocale]}
                 </p>
-                <p className="text-xs text-[#93A3B1]">
-                  {isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}
+                <p className="border-t border-[#141A24]/8 pt-3 text-xs leading-relaxed text-[#5F5A50]">
+                  {CV_EDUCATION.note[typedLocale]}
                 </p>
               </div>
-              <p className="border-t border-[#F4EEE3]/10 pt-3 text-xs leading-relaxed text-[#D1C7B8]">
-                {isAr
-                  ? "الصحافة الرقمية، وصياغة الأخبار لمنصات التواصل، وإعداد التقارير والتقديم."
-                  : "Social Media, Journalism, newsroom reporting, and broadcast presenting."}
-              </p>
+
+              {/* Languages */}
+              <div className="rounded-2xl border border-[#141A24]/10 bg-white p-6 sm:p-7 shadow-sm space-y-4">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#B81D26]">
+                  <Languages className="h-4 w-4" />
+                  <span>{isAr ? "اللغات" : "LANGUAGES"}</span>
+                </div>
+                <div className="space-y-4">
+                  {CV_LANGUAGES.map((lang) => (
+                    <div
+                      key={lang.name.en}
+                      className="flex items-center justify-between gap-4 border-b border-[#141A24]/8 pb-3 last:border-b-0 last:pb-0"
+                    >
+                      <div>
+                        <div className="text-sm font-bold text-[#121722]">
+                          {lang.name[typedLocale]}
+                        </div>
+                        <div className="text-xs text-[#645E54]">
+                          {lang.levelLabel[typedLocale]}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1.5" aria-hidden="true">
+                        {[1, 2, 3, 4, 5].map((dot) => (
+                          <span
+                            key={dot}
+                            className={`h-2.5 w-2.5 rounded-full ${
+                              dot <= lang.dots
+                                ? "bg-[#E6242F]"
+                                : "bg-[#121722]/15"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* 2. Sudani */}
-            <div className="flex flex-col justify-between rounded-sm border border-[#F4EEE3]/15 bg-[#0B1926]/75 p-5 space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[11px] font-semibold text-[#C8B692]">
-                    {isAr ? "يناير 2018 – ديسمبر 2018" : "Jan 2018 – Dec 2018 · 1 yr"}
+            {/* Newsroom Systems & Core Capabilities Column */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Technical Broadcast Stack */}
+              <div className="rounded-2xl border border-[#141A24]/10 bg-white p-6 sm:p-7 shadow-sm space-y-4">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#B81D26]">
+                  <Cpu className="h-4 w-4" />
+                  <span>
+                    {isAr
+                      ? "أنظمة غرف الأخبار والأدوات التقنية"
+                      : "NEWSROOM SYSTEMS & TECHNICAL PROFICIENCY"}
                   </span>
                 </div>
-                <h3 className="text-base font-bold text-[#F4EEE3]">
-                  {isAr ? "مقدمة برامج (Presenter)" : "Presenter"}
-                </h3>
-                <p className="text-xs font-semibold text-[#C8B692]">
-                  {isAr ? "سوداني (Sudani)" : "Sudani"}
-                </p>
-                <p className="text-xs text-[#93A3B1]">
-                  {isAr ? "الخرطوم، السودان" : "Khartoum, Sudan"}
-                </p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {CV_NEWSROOM_TOOLS.map((tool) => (
+                    <div
+                      key={tool.name}
+                      className="flex items-center justify-between gap-3 rounded-xl border border-[#141A24]/8 bg-[#FAF8F4] px-4 py-3"
+                    >
+                      <div>
+                        <div className="font-mono-code text-sm font-bold text-[#121722]">
+                          {tool.name}
+                        </div>
+                        <div className="text-xs text-[#645E54]">
+                          {tool.role[typedLocale]}
+                        </div>
+                      </div>
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-[#D4BE96]" />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="border-t border-[#F4EEE3]/10 pt-3 text-xs leading-relaxed text-[#D1C7B8]">
-                {isAr
-                  ? "المشاركة في تقديم المجلة المرئية الشهرية لـ «سوداني»، وتغطية أخبار الشركة وخدمات المسؤولية المجتمعية وأثرها في المجتمع."
-                  : "Co-hosting Sudani’s monthly video magazine, covering company news, social responsibility services, and community impact."}
-              </p>
-            </div>
 
-            {/* 3. Hala 96 FM (3 roles) */}
-            <div className="flex flex-col justify-between rounded-sm border border-[#F4EEE3]/15 bg-[#0B1926]/75 p-5 space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[11px] font-semibold text-[#C8B692]">
-                    {isAr ? "أغسطس 2015 – أكتوبر 2018" : "Aug 2015 – Oct 2018 · 3 yrs 3 mos"}
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-[#F4EEE3]">
-                  {isAr ? "إذاعة هلا 96 إف إم" : "Hala 96 FM"}
-                </h3>
-                <p className="text-xs text-[#93A3B1]">
-                  {isAr ? "الخرطوم، السودان" : "Khartoum, Sudan"}
-                </p>
-                <ul className="space-y-1.5 pt-1 text-xs text-[#D1C7B8]">
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ED2530]" />
-                    <span>
-                      <strong>{isAr ? "مذيعة ومعدة:" : "Radio Jockey:"}</strong>{" "}
-                      {isAr ? "أغسطس 2015 – أكتوبر 2018 («هلا وهن»)" : "Aug 2015 – Oct 2018 (Hala & Her)"}
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8B692]" />
-                    <span>
-                      <strong>{isAr ? "مشرفة التواصل الاجتماعي:" : "Social Media Supervisor:"}</strong>{" "}
-                      {isAr ? "يونيو – سبتمبر 2018" : "Jun – Sep 2018"}
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#93A3B1]" />
-                    <span>
-                      <strong>{isAr ? "مسؤولة موارد بشرية ومديرة مكتب:" : "HR Officer - Office Manager:"}</strong>{" "}
-                      {isAr ? "ديسمبر 2017 – مارس 2018" : "Dec 2017 – Mar 2018"}
-                    </span>
-                  </li>
-                </ul>
+              {/* Capabilities Pillars */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {CV_CAPABILITIES.map((cap) => (
+                  <div
+                    key={cap.id}
+                    className="rounded-2xl border border-[#141A24]/10 bg-white p-5 shadow-sm space-y-3"
+                  >
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#121722]">
+                      <Sparkles className="h-3.5 w-3.5 text-[#E6242F]" />
+                      <span>{cap.category[typedLocale]}</span>
+                    </div>
+                    <ul className="space-y-1.5 text-xs leading-relaxed text-[#4E4940]">
+                      {cap.items[typedLocale].map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#B81D26]" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            </div>
-
-            {/* 4. Ashorooq TV */}
-            <div className="flex flex-col justify-between rounded-sm border border-[#F4EEE3]/15 bg-[#0B1926]/75 p-5 space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[11px] font-semibold text-[#C8B692]">
-                    {isAr ? "أبريل 2017 – أغسطس 2018" : "Apr 2017 – Aug 2018 · 1 yr 5 mos"}
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-[#F4EEE3]">
-                  {isAr ? "مذيعة تلفزيونية (Television Presenter)" : "Television Presenter"}
-                </h3>
-                <p className="text-xs font-semibold text-[#C8B692]">
-                  {isAr ? "قناة الشروق الفضائية" : "Ashorooq TV"}
-                </p>
-                <p className="text-xs text-[#93A3B1]">
-                  {isAr ? "السودان" : "Sudan"}
-                </p>
-              </div>
-              <p className="border-t border-[#F4EEE3]/10 pt-3 text-xs leading-relaxed text-[#D1C7B8]">
-                {isAr
-                  ? "تقديم 3 برامج رئيسية على شاشة قناة الشروق، من بينها البرنامج الصباحي اليومي المباشر وبرامج المنوعات."
-                  : "Presenter for 3 main programs on Ashorooq TV, including its daily live morning variety program."}
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Render All 4 Distinct Chapters */}
+      {/* Render All 4 Narrative Chapters */}
       <div>
         {JOURNEY_CHAPTERS.map((chapter) => (
           <JourneyChapterSection
@@ -235,40 +379,44 @@ export default async function JourneyPage({
       </div>
 
       {/* Closing Transition to On Screen & Words */}
-      <section className="bg-[#060E16] py-16 sm:py-20">
+      <section className="bg-[#07090E] py-16 sm:py-24 border-t border-white/8">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8 space-y-6">
           <span
-            className={`text-xs font-semibold text-[#C8B692] ${
+            className={`text-xs font-semibold text-[#D4BE96] ${
               isAr ? "" : "font-mono-code uppercase tracking-[0.18em]"
             }`}
           >
             {isAr ? "المحطة التالية" : "CONTINUE EXPLORING"}
           </span>
           <h2
-            className={`text-3xl sm:text-4xl text-[#F4EEE3] ${
+            className={`text-2xl sm:text-4xl text-[#F7F4EE] ${
               isAr ? "font-display-ar font-bold" : "font-display-en font-semibold"
             }`}
           >
             {isAr
-              ? "شاهد كيف تترجم هذه المسيرة على الشاشة وفي النصوص المكتوبة"
-              : "Experience These Chapters Through Her Broadcasts and Written Stories"}
+              ? "شاهد مختاراتها المرئية واقرأ قصصها وتقاريرها المكتوبة"
+              : "Watch Selected Broadcasts & Read Her Authored Stories"}
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href={`/${typedLocale}/on-screen`}
-              className="inline-flex items-center gap-2 rounded bg-[#ED2530] px-6 py-3 text-sm font-semibold text-white hover:bg-[#d41f2a]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#E6242F] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#E6242F]/20 transition hover:bg-[#cc1d27]"
             >
               <span>
-                {isAr ? "الدخول إلى قاعة العرض (على الشاشة)" : "Enter the Screening Room (On Screen)"}
+                {isAr ? "على الشاشة (قاعة العرض)" : "On Screen (Screening Room)"}
               </span>
-              {isAr ? <ArrowUpLeft className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
+              {isAr ? (
+                <ArrowUpLeft className="h-4 w-4" />
+              ) : (
+                <ArrowUpRight className="h-4 w-4" />
+              )}
             </Link>
             <Link
               href={`/${typedLocale}/words`}
-              className="inline-flex items-center gap-2 rounded border border-[#C8B692]/40 bg-[#0B1926] px-6 py-3 text-sm font-medium text-[#F4EEE3] hover:border-[#C8B692]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#D4BE96]/35 bg-white/[0.04] px-6 py-3 text-sm font-medium text-[#F7F4EE] transition hover:border-[#D4BE96] hover:bg-white/[0.08]"
             >
               <span>
-                {isAr ? "قراءة التقارير والقصص المكتوبة" : "Read Words & Stories"}
+                {isAr ? "كلمات وقصص" : "Words & Stories"}
               </span>
             </Link>
           </div>

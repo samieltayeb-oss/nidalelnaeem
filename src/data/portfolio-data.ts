@@ -124,33 +124,33 @@ export const SITE_IDENTITY = {
     en: "Nidal Elnaeem",
   },
   verifiedTitle: {
-    ar: "كاتبة أولى لمنصات التواصل · مراسلة · مذيعة",
-    en: "Senior Social Media Writer · Reporter · Presenter",
+    ar: "كاتبة أولى لمنصات التواصل · مقدمة أخبار · مراسلة",
+    en: "Senior Social Media Writer · News Presenter · Reporter",
   },
   associationLabel: {
-    ar: "الحدث · العربية",
-    en: "Al Hadath · Al Arabiya",
+    ar: "العربية · الحدث",
+    en: "Al Arabiya · Al Hadath",
   },
   associationContextNote: {
-    ar: "الموقع الشخصي للإعلامية نضال النعيم — يعرض محطات عملها وتقاريرها وبرامجها.",
-    en: "Personal portfolio of journalist and presenter Nidal Elnaeem.",
+    ar: "صحفية ومقدمة أخبار باللغتين العربية والإنجليزية — مجموعة MBC / قناتي العربية والحدث.",
+    en: "Bilingual Journalist & News Presenter — MBC Group / Al Arabiya & Al Hadath.",
   },
   heroOpening: {
     editionTag: {
-      ar: "في دائرة الضوء",
-      en: "IN FOCUS",
+      ar: "من أثير إذاعة هلا 96 إلى غرفة أخبار قناتي العربية والحدث",
+      en: "FROM HALA 96 FM TO AL ARABIYA & AL HADATH NEWSROOMS",
     },
     shortIntro: {
-      ar: "بدأت من ميكروفون الإذاعة في الخرطوم، وعبرت إلى التلفزيون وغرف الأخبار العربية في الرياض ودبي، حاملةً شغف القصة الخبرية القريبة من الناس.",
-      en: "From live radio studios in Khartoum to pan-Arab newsrooms in Riyadh and Dubai, her work centers on clear reporting, broadcast presenting, and digital journalism.",
+      ar: "صحفية ومقدمة أخبار تعمل باللغتين العربية والإنجليزية بخبرة تتجاوز 7 سنوات في قناتي «العربية» و«الحدث» بين دبي والرياض؛ تجمع بين الحضور المباشر على الشاشة، وصناعة القصة الرقمية من الفكرة حتى النشر، وتوظيف أدوات الذكاء الاصطناعي في غرف الأخبار.",
+      en: "Journalist and news presenter working in Arabic and English with over 7 years at Al Arabiya and Al Hadath across Dubai and Riyadh—combining live on-air presence with end-to-end digital storytelling and AI-assisted newsroom production.",
     },
     primaryCta: {
-      ar: "الأعمال المختارة",
-      en: "Selected Work",
+      ar: "شاهد الأعمال المختارة",
+      en: "Explore Selected Work",
     },
     secondaryCta: {
-      ar: "المسيرة المهنية",
-      en: "The Journey",
+      ar: "المسيرة والسيرة المهنية",
+      en: "Career & Journey",
     },
     spotlightToggleOn: {
       ar: "إضاءة الاستوديو: متحركة",
@@ -1633,39 +1633,39 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     number: "03",
     rhythmStyle: "newsroom-monograph",
     eraBadge: {
-      ar: "الفصل الثالث · قناة العربية والحدث (مارس 2019 – الحاضر)",
-      en: "CHAPTER III · AL ARABIYA NEWS CHANNEL & AL HADATH (MAR 2019 – PRESENT)",
+      ar: "الفصل الثالث · مجموعة MBC / العربية والحدث (مارس 2019 – الحاضر)",
+      en: "CHAPTER III · MBC GROUP / AL ARABIYA & AL HADATH (MAR 2019 – PRESENT)",
     },
     title: {
-      ar: "في غرفة الأخبار: الكتابة الرقمية، والتقارير، والتقديم",
-      en: "In the Newsroom: Writing, Reporting, and Presenting",
+      ar: "في غرفة أخبار قناتي العربية والحدث: بين دبي والرياض",
+      en: "Inside Al Arabiya & Al Hadath Newsrooms: From Dubai to Riyadh",
     },
     subtitle: {
-      ar: "كاتبة أولى لمنصات التواصل · مراسلة · مذيعة — الرياض، المملكة العربية السعودية",
-      en: "Senior Social Media Writer Reporter / Presenter · Full-time · Riyadh, Saudi Arabia",
+      ar: "كاتبة أولى لمنصات التواصل · مقدمة أخبار · صحفية ومراسلة (+7 سنوات)",
+      en: "Senior Social Media Writer · News Presenter · Journalist & Reporter (7+ Years)",
     },
     leadParagraph: {
-      ar: "منذ مارس 2019 وحتى اليوم، تعمل نضال النعيم بدوام كامل في «قناة العربية» (Al Arabiya News Channel) و«الحدث» في الرياض بالمملكة العربية السعودية، في منصب كاتبة أولى لمنصات التواصل الاجتماعي، ومراسلة، ومذيعة (Senior Social Media Writer Reporter / Presenter).",
-      en: "Since March 2019, Nidal Elnaeem has worked full-time with Al Arabiya News Channel and Al Hadath in Riyadh, Saudi Arabia, serving as Senior Social Media Writer Reporter / Presenter.",
+      ar: "في مارس 2019، انضمت نضال النعيم إلى مجموعة MBC / قناة «العربية» في دولة الإمارات العربية المتحدة، حيث عملت على مدار خمس سنوات (حتى يناير 2024) مذيعة أخبار، وصحفية لمنصات التواصل تدير وتنسق النشر عبر أكثر من 50 حساباً رئيسياً وفرعياً، وكاتبة ومراسلة تعدّ التقارير وتعلق عليها صوتياً.",
+      en: "Joining MBC Group / Al Arabiya News Channel in the UAE in March 2019, Nidal spent five years (through January 2024) working across live news presenting, breaking-news social media journalism—coordinating over 50 primary and secondary accounts—and broadcast report writing and narration.",
     },
     bodyParagraphs: {
       ar: [
-        "بدأت مساهماتها المكتوبة على موقع «العربية.نت» في مايو 2019 بتقارير تشرح للقارئ العربي خلفية الأحداث والمصطلحات المتداولة في الشارع السوداني.",
-        "وفي عملها اليومي بين التحرير الرقمي والشاشة، تجمع بين مهارات الصحافة الخبرية، وإدارة المحتوى على منصات التواصل، وإعداد التقارير والتقديم التلفزيوني.",
+        "ومنذ فبراير 2024 في المملكة العربية السعودية (الرياض)، تواصل عملها كـ «كاتبة أولى لمنصات التواصل ومقدمة أخبار» (Senior Social Media Writer / Presenter)، مغطيةً أبرز أحداث وقصص الشرق الأوسط وشمال أفريقيا عبر التلفزيون ومنصات قناتي «العربية» و«الحدث».",
+        "كما توظف خلفيتها الهندسية في البرمجيات وأحدث أدوات الذكاء الاصطناعي لتطوير البحث الصحفي، وتسريع التحرير، وإنتاج المحتوى الرقمي من الفكرة حتى النشر.",
       ],
       en: [
-        "Her early bylines on Al Arabiya Net in May 2019 explained the language and social background of events in Sudan for readers across the Arab world.",
-        "Across digital platforms and studio segments, her work combines newsroom writing, social media journalism, field/studio reporting, and broadcast presenting.",
+        "Since February 2024 in Saudi Arabia (Riyadh), she has served as Senior Social Media Writer / Presenter—covering major daily stories across the MENA region on television and across Al Arabiya and Al Hadath digital platforms.",
+        "Drawing on her Software Engineering background, she integrates modern AI tools into news research, writing, and end-to-end digital video production.",
       ],
     },
     pullQuote: {
       text: {
-        ar: "«الكتابة لمنصات التواصل في غرفة الأخبار تعني تقديم المعلومة الدقيقة في أقل عدد ممكن من الكلمات دون الإخلال بالسياق.»",
-        en: "“Writing for social platforms in a newsroom means delivering accurate facts concisely without losing human context.”",
+        ar: "«من أثير إذاعة هلا 96 إلى غرفة أخبار قناتي العربية والحدث.»",
+        en: "“From the airwaves of Hala 96 FM to the newsroom of Al Arabiya and Al Hadath.”",
       },
       attribution: {
-        ar: "عن العمل التحريري في غرف الأخبار",
-        en: "On newsroom digital writing",
+        ar: "نضال النعيم",
+        en: "Nidal Elnaeem",
       },
     },
     portraitAsset: "/media/derivatives/portrait-04-broadcast-yellow-blazer.webp",
@@ -1677,24 +1677,51 @@ export const JOURNEY_CHAPTERS: JourneyChapter[] = [
     },
     milestones: [
       {
-        id: "ms-alhadath-current",
-        period: { ar: "مارس 2019 – الحاضر · دوام كامل", en: "Mar 2019 – Present · Full-time" },
-        organization: { ar: "قناة العربية · الحدث (الرياض، السعودية)", en: "Al Arabiya News Channel · Al Hadath (Riyadh, Saudi Arabia)" },
+        id: "ms-alarabiya-ksa",
+        period: { ar: "فبراير 2024 – الحاضر", en: "Feb 2024 – Present" },
+        organization: {
+          ar: "مجموعة MBC / قناة العربية والحدث — السعودية (الرياض)",
+          en: "MBC Group / Al Arabiya & Al Hadath — KSA (Riyadh)",
+        },
         role: {
-          ar: "كاتبة أولى لمنصات التواصل · مراسلة · مذيعة (Senior Social Media Writer Reporter / Presenter)",
-          en: "Senior Social Media Writer Reporter / Presenter",
+          ar: "كاتبة أولى لمنصات التواصل ومقدمة أخبار (Senior Social Media Writer / Presenter)",
+          en: "Senior Social Media Writer / Presenter",
         },
         natureOfEntry: "broadcast_role",
-        natureBadge: { ar: "الدور الحالي", en: "Current Role" },
+        natureBadge: { ar: "الدور الحالي · الرياض", en: "Current · KSA" },
         summary: {
-          ar: "الكتابة والتحرير لمنصات التواصل الاجتماعي، والصحافة الخبرية، وإعداد التقارير، والتقديم التلفزيوني.",
-          en: "Full-time senior social media writing, reporting, and broadcast presenting in Riyadh, Saudi Arabia.",
+          ar: "تغطية يومية لأحداث الشرق الأوسط وشمال أفريقيا عبر الشاشة ومنصات العربية والحدث، وإنتاج المحتوى الرقمي من البداية للنهاية بدعم أدوات الذكاء الاصطناعي.",
+          en: "Daily MENA coverage on TV and Al Arabiya & Al Hadath social platforms, end-to-end content production, and AI-assisted research & writing.",
         },
         sourceNote: {
-          ar: "حسابها الرسمي على لينكدإن وأرشيف العربية.نت.",
-          en: "Official LinkedIn profile and Al Arabiya Net archive.",
+          ar: "السيرة الذاتية الرسمية وحساب لينكدإن.",
+          en: "Official CV and LinkedIn profile.",
         },
         sourceUrl: "https://www.linkedin.com/in/nidalelnaeem77/",
+        approvalStatus: "approved",
+      },
+      {
+        id: "ms-alarabiya-uae",
+        period: { ar: "مارس 2019 – يناير 2024", en: "Mar 2019 – Jan 2024" },
+        organization: {
+          ar: "مجموعة MBC / قناة العربية — الإمارات (دبي)",
+          en: "MBC Group / Al Arabiya News Channel — UAE (Dubai)",
+        },
+        role: {
+          ar: "مذيعة أخبار · صحفية منصات التواصل · كاتبة ومراسلة",
+          en: "News Presenter · Social Media Journalist · Writer/Reporter",
+        },
+        natureOfEntry: "broadcast_role",
+        natureBadge: { ar: "5 سنوات · دبي", en: "5 Years · UAE" },
+        summary: {
+          ar: "تقديم الأخبار، وتحرير العواجل الرقمية، وتنسيق أكثر من 50 حساباً رسمياً عبر منصات التواصل، وكتابة التقارير التلفزيونية والتعليق الصوتي عليها.",
+          en: "News presenting, breaking-news social media editing across 50+ accounts, and writing/narrating television news reports.",
+        },
+        sourceNote: {
+          ar: "السيرة الذاتية الرسمية وأرشيف العربية.نت.",
+          en: "Official CV and Al Arabiya Net archive.",
+        },
+        sourceUrl: "https://www.alarabiya.net/",
         approvalStatus: "approved",
       },
     ],

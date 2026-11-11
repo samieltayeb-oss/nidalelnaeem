@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "نضال النعيم | Nidal Elnaeem — In Focus · بورتريه وثائقي تفاعلي",
+  title: "نضال النعيم | Nidal Elnaeem — من أثير إذاعة هلا 96 إلى غرفة أخبار قناتي العربية والحدث",
   description:
-    "نضال النعيم — كاتبة أولى لمنصات التواصل · مراسلة · مذيعة. رحلة وثائقية تفاعلية عبر أعمالها الصحفية والتلفزيونية والإذاعية الموثقة.",
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    "نضال النعيم — كاتبة أولى لمنصات التواصل ومقدمة أخبار ومراسلة في قناتي العربية والحدث. من أثير إذاعة هلا 96 إلى غرفة أخبار قناتي العربية والحدث.",
+  openGraph: {
+    title: "نضال النعيم | Nidal Elnaeem",
+    description:
+      "من أثير إذاعة هلا 96 إلى غرفة أخبار قناتي العربية والحدث — صحفية ومقدمة أخبار باللغتين العربية والإنجليزية.",
+    type: "website",
   },
 };
 
@@ -27,11 +28,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#060E16] text-[#F4EEE3] antialiased selection:bg-[#ED2530] selection:text-white">
+      <body className="min-h-screen bg-[#07090E] text-[#F7F4EE] antialiased selection:bg-[#E6242F] selection:text-white">
         {children}
       </body>
     </html>

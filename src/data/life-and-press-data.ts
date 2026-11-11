@@ -227,20 +227,37 @@ export const LIFE_MOMENTS: LifeMomentItem[] = [
 
 export const HOSTED_PROGRAMS: HostedProgramRecord[] = [
   {
-    id: "prog-alhadath-alarabiya",
-    period: { ar: "مارس 2019 – الحاضر", en: "Mar 2019 – Present" },
+    id: "prog-alarabiya-ksa",
+    period: { ar: "فبراير 2024 – الحاضر (مارس 2019 – الحاضر)", en: "Feb 2024 – Present (Mar 2019 – Present)" },
     title: {
-      ar: "كاتبة أولى لمنصات التواصل · مراسلة · مذيعة",
+      ar: "كاتبة أولى لمنصات التواصل · مراسلة · مقدمة أخبار",
       en: "Senior Social Media Writer Reporter / Presenter",
     },
     network: {
-      ar: "قناة العربية · الحدث (الرياض، السعودية)",
-      en: "Al Arabiya News Channel · Al Hadath (Riyadh, Saudi Arabia)",
+      ar: "مجموعة MBC · قناة العربية والحدث (الرياض، السعودية)",
+      en: "MBC Group · Al Arabiya & Al Hadath (Riyadh, Saudi Arabia)",
     },
     medium: { ar: "دوام كامل · غرفة الأخبار", en: "Full-time · Broadcast & Digital" },
     description: {
-      ar: "صياغة القصص الإخبارية لمنصات التواصل الاجتماعي، والصحافة الخبرية، وإعداد التقارير المكتوبة والمرئية، والتقديم.",
-      en: "Full-time senior social media writing, news reporting, and broadcast presenting.",
+      ar: "تغطية يومية لأبرز أحداث الشرق الأوسط وشمال أفريقيا عبر التلفزيون ومنصات «العربية» و«الحدث»، وإنتاج القصص الرقمية من الفكرة حتى النشر بدعم أدوات الذكاء الاصطناعي.",
+      en: "Daily MENA newsroom coverage across television and Al Arabiya & Al Hadath social platforms, end-to-end digital production, and AI-assisted editorial workflows.",
+    },
+  },
+  {
+    id: "prog-alarabiya-uae",
+    period: { ar: "مارس 2019 – يناير 2024 (5 سنوات)", en: "Mar 2019 – Jan 2024 · 5 yrs" },
+    title: {
+      ar: "مذيعة أخبار · صحفية منصات التواصل · كاتبة ومراسلة",
+      en: "News Presenter · Social Media Journalist · Writer/Reporter",
+    },
+    network: {
+      ar: "مجموعة MBC · قناة العربية (دبي، الإمارات)",
+      en: "MBC Group · Al Arabiya News Channel (Dubai, UAE)",
+    },
+    medium: { ar: "تقديم وتحرير رقمي (+50 حساباً)", en: "On-Air & 50+ Digital Channels" },
+    description: {
+      ar: "تقديم الأخبار على الهواء، وتحرير العواجل عبر أكثر من 50 حساباً رسمياً على منصات التواصل، وكتابة التقارير التلفزيونية والتعليق الصوتي عليها.",
+      en: "Live news presenting, breaking-news social media editing across 50+ official channels, and writing/narrating broadcast news reports.",
     },
   },
   {
@@ -258,34 +275,34 @@ export const HOSTED_PROGRAMS: HostedProgramRecord[] = [
     },
   },
   {
-    id: "prog-hala-wa-hun",
-    period: { ar: "أغسطس 2015 – أكتوبر 2018 (3 سنوات و3 أشهر)", en: "Aug 2015 – Oct 2018 · 3 yrs 3 mos" },
-    title: {
-      ar: "برنامج «هلا وهن» (Hala & Her) والإشراف الرقمي",
-      en: "“Hala & Her (هلا وهن)” & Social Media Supervision",
-    },
-    network: { ar: "إذاعة هلا 96 إف إم · الخرطوم، السودان", en: "Hala 96 FM · Khartoum, Sudan" },
-    medium: {
-      ar: "مذيعة ومعدة · مشرفة منصات التواصل · مديرة مكتب",
-      en: "Radio Jockey · Social Media Supervisor · HR/Office Manager",
-    },
-    description: {
-      ar: "إنتاج وإخراج مشترك وتقديم البرنامج اليومي المباشر للمرأة «هلا وهن»، إلى جانب الإشراف على منصات التواصل والموقع الإلكتروني والبث المباشر (يونيو – سبتمبر 2018) وإدارة المكتب والموارد البشرية (ديسمبر 2017 – مارس 2018).",
-      en: "Produced, co-directed, and presented the daily live show “Hala & Her (هلا وهن),” alongside serving as Social Media Supervisor (Jun – Sep 2018) and HR Officer - Office Manager (Dec 2017 – Mar 2018).",
-    },
-  },
-  {
     id: "prog-rawah-ashorooq",
     period: { ar: "أبريل 2017 – أغسطس 2018 (سنة و5 أشهر)", en: "Apr 2017 – Aug 2018 · 1 yr 5 mos" },
     title: {
-      ar: "البرنامج الصباحي المباشر، وبرنامج «رواح»، و«مع كل الود والتقدير»",
-      en: "Daily Live Morning Show, “Rawah” & 3 Main Programs",
+      ar: "3 برامج رئيسية: البرنامج الصباحي، «رواح»، و«مع كل الود والتقدير»",
+      en: "3 Main Shows: Live Morning Show, “RAWAH” & “Public Appreciation Show”",
     },
-    network: { ar: "قناة الشروق الفضائية (Ashorooq TV)", en: "Ashorooq TV" },
+    network: { ar: "قناة الشروق الفضائية (Ashorooq TV) · السودان", en: "Ashorooq TV · Sudan" },
     medium: { ar: "مذيعة تلفزيونية (Television Presenter)", en: "Television Presenter" },
     description: {
-      ar: "تقديم 3 برامج رئيسية على شاشة قناة الشروق الفضائية، من بينها البرنامج الصباحي اليومي المباشر للمنوعات والبرامج المسائية والثقافية.",
-      en: "Presenter for 3 main programs on Ashorooq TV, including its daily live morning variety show and cultural programs.",
+      ar: "تقديم البرنامج الصباحي اليومي المباشر للمنوعات، والبرنامج الحواري الثقافي المسائي «رواح»، والبرنامج الرمضاني الإنساني اليومي «مع كل الود والتقدير».",
+      en: "Anchored the daily live Morning Show, hosted the evening cultural talk show RAWAH, and presented the daily humanitarian Ramadan special.",
+    },
+  },
+  {
+    id: "prog-hala-wa-hun",
+    period: { ar: "يوليو / أغسطس 2015 – أكتوبر 2018 (3 سنوات و3 أشهر)", en: "Jul / Aug 2015 – Oct 2018 · 3 yrs 3 mos" },
+    title: {
+      ar: "7 برامج إذاعية من بينها «هلا وهن» (Hala & Her) والإشراف الرقمي",
+      en: "7 Popular Radio Shows incl. “Hala & Her (هلا وهن)” & Digital Supervision",
+    },
+    network: { ar: "إذاعة هلا 96 إف إم · الخرطوم، السودان", en: "Hala 96 FM · Khartoum, Sudan" },
+    medium: {
+      ar: "مذيعة ومعدة · مشرفة تواصل · مديرة مكتب",
+      en: "Radio Jockey · Social Media Supervisor · HR/Office Manager",
+    },
+    description: {
+      ar: "إنتاج وإخراج مشترك وتقديم 7 برامج جماهيرية (منها «هلا وهن» والبرنامج الصباحي وبرامج الثقافة ورمضان)، إلى جانب الإشراف على منصات التواصل والبث الحي (يونيو – سبتمبر 2018) وإدارة المكتب والموارد البشرية (ديسمبر 2017 – مارس 2018).",
+      en: "Produced, co-directed, and presented 7 popular shows including “Hala & Her (هلا وهن),” alongside serving as Social Media Supervisor (Jun – Sep 2018) and HR Officer - Office Manager (Dec 2017 – Mar 2018).",
     },
   },
   {

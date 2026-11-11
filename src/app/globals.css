@@ -2,62 +2,98 @@
 
 @layer base {
   :root {
-    --bg-midnight: #060e16;
-    --bg-navy: #0a1722;
-    --bg-slate: #102232;
-    --bg-ivory: #f4f0e8;
-    --text-ivory: #f4eee3;
-    --text-sand: #d1c7b8;
-    --text-muted: #93a3b1;
-    --accent-red: #ed2530;
-    --accent-champagne: #c8b692;
+    --bg-obsidian: #07090e;
+    --bg-studio: #0d111a;
+    --bg-elevated: #131926;
+    --bg-alabaster: #f7f4ee;
+    --bg-sand: #efeae0;
+    --text-ivory: #f7f4ee;
+    --text-sand: #d6cfc2;
+    --text-muted: #949ba8;
+    --ink-dark: #111622;
+    --accent-crimson: #e6242f;
+    --accent-gold: #d4be96;
+    --font-readex: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
     --font-amiri: "Amiri", "Traditional Arabic", Georgia, serif;
-    --font-ibm-arabic: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-    --font-cormorant: "Cormorant Garamond", Georgia, Cambria, serif;
+    --font-cormorant: "Cormorant Garamond", "Instrument Serif", Georgia, serif;
     --font-jakarta: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
     --font-jetbrains: "JetBrains Mono", Consolas, monospace;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-midnight);
+    background-color: var(--bg-obsidian);
     color: var(--text-ivory);
   }
 
   body {
-    background-color: var(--bg-midnight);
+    background-color: var(--bg-obsidian);
     color: var(--text-ivory);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Focus ring for keyboard accessibility */
   :focus-visible {
-    outline: 2px solid var(--accent-champagne);
+    outline: 2px solid var(--accent-gold);
     outline-offset: 3px;
   }
 }
 
-/* Typography helpers */
+/* Editorial Typography System */
 .font-display-ar {
-  font-family: var(--font-amiri), "Traditional Arabic", Georgia, serif;
+  font-family: var(--font-readex), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-ar {
+  font-family: var(--font-amiri), Georgia, serif;
 }
 
 .font-sans-ar {
-  font-family: var(--font-ibm-arabic), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-readex), system-ui, -apple-system, sans-serif;
 }
 
 .font-display-en {
-  font-family: var(--font-cormorant), Georgia, Cambria, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
 }
 
 .font-sans-en {
   font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
+.font-display {
+  font-family: var(--font-readex), var(--font-cormorant), Georgia, sans-serif;
+}
+
 .font-mono-code {
   font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+/*Elevated Surface Utilities*/
+.surface-glass-dark {
+  background: linear-gradient(
+    165deg,
+    rgba(19, 25, 38, 0.86) 0%,
+    rgba(11, 15, 24, 0.94) 100%
+  );
+  border: 1px solid rgba(212, 190, 150, 0.16);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+}
+
+.surface-glass-dark:hover {
+  border-color: rgba(212, 190, 150, 0.36);
+}
+
+.surface-paper {
+  background-color: #f7f4ee;
+  color: #111622;
+}
+
+.surface-paper-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(17, 22, 34, 0.09);
+  box-shadow: 0 14px 36px rgba(17, 22, 34, 0.05);
 }
 
 /* "In Focus" Studio Spotlight Reveal Mask */
@@ -65,31 +101,30 @@
   pointer-events: none;
   will-change: opacity;
   -webkit-mask-image: radial-gradient(
-    480px circle at var(--spot-x, 50%) var(--spot-y, 44%),
+    520px circle at var(--spot-x, 50%) var(--spot-y, 44%),
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.72) 42%,
-    rgba(0, 0, 0, 0.18) 68%,
-    rgba(0, 0, 0, 0) 88%
+    rgba(0, 0, 0, 0.16) 70%,
+    rgba(0, 0, 0, 0) 90%
   );
   mask-image: radial-gradient(
-    480px circle at var(--spot-x, 50%) var(--spot-y, 44%),
+    520px circle at var(--spot-x, 50%) var(--spot-y, 44%),
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.72) 42%,
-    rgba(0, 0, 0, 0.18) 68%,
-    rgba(0, 0, 0, 0) 88%
+    rgba(0, 0, 0, 0.16) 70%,
+    rgba(0, 0, 0, 0) 90%
   );
 }
 
-/* Static composition when spotlight is turned off or on touch/reduced-motion devices */
 [data-spotlight="static"] .in-focus-spotlight-layer {
   -webkit-mask-image: radial-gradient(
-    680px ellipse at 50% 42%,
+    720px ellipse at 50% 42%,
     rgba(0, 0, 0, 0.78) 0%,
     rgba(0, 0, 0, 0.42) 55%,
     rgba(0, 0, 0, 0.08) 85%
   );
   mask-image: radial-gradient(
-    680px ellipse at 50% 42%,
+    720px ellipse at 50% 42%,
     rgba(0, 0, 0, 0.78) 0%,
     rgba(0, 0, 0, 0.42) 55%,
     rgba(0, 0, 0, 0.08) 85%
@@ -99,13 +134,13 @@
 @media (hover: none), (prefers-reduced-motion: reduce) {
   .in-focus-spotlight-layer {
     -webkit-mask-image: radial-gradient(
-      680px ellipse at 50% 42%,
+      720px ellipse at 50% 42%,
       rgba(0, 0, 0, 0.78) 0%,
       rgba(0, 0, 0, 0.42) 55%,
       rgba(0, 0, 0, 0.08) 85%
     ) !important;
     mask-image: radial-gradient(
-      680px ellipse at 50% 42%,
+      720px ellipse at 50% 42%,
       rgba(0, 0, 0, 0.78) 0%,
       rgba(0, 0, 0, 0.42) 55%,
       rgba(0, 0, 0, 0.08) 85%
@@ -113,7 +148,6 @@
   }
 }
 
-/* Gentle signature reveal */
 @keyframes signatureAppear {
   0% {
     opacity: 0;
@@ -126,13 +160,13 @@
 }
 
 .signature-reveal {
-  animation: signatureAppear 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: signatureAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes subtleFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   100% {
     opacity: 1;
@@ -141,7 +175,7 @@
 }
 
 .editorial-reveal {
-  animation: subtleFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: subtleFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -136,7 +136,7 @@ export function ConceptTwoBento({ locale }: { locale: Locale }) {
                 {SITE_IDENTITY.name[locale]}
                 <span className="mx-3 inline-flex align-middle items-center -space-x-2 rtl:space-x-reverse">
                   <img
-                    src="/media/social/ig-DJAecEGMcm1-1.webp"
+                    src="/media/social/ig-CwVltyRSO9d-1.webp"
                     alt=""
                     className="inline-block h-11 w-11 sm:h-14 sm:w-14 rounded-full object-cover object-top border-2 border-white shadow-md"
                   />
@@ -188,7 +188,7 @@ export function ConceptTwoBento({ locale }: { locale: Locale }) {
           <div className="lg:col-span-5 relative">
             <div className="relative overflow-hidden rounded-[40px] bg-[#F3F4F7] shadow-[0_30px_80px_rgba(9,10,15,0.10)]">
               <img
-                src="/media/social/ig-CwVltyRSO9d-1.webp"
+                src="/media/social/ig-DJAecEGMcm1-1.webp"
                 alt={SITE_IDENTITY.name[locale]}
                 className="aspect-[4/5] w-full object-cover object-[50%_20%]"
               />

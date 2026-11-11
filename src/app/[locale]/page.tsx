@@ -91,7 +91,7 @@ export default async function LocaleHomePage({
                 {SITE_IDENTITY.name[typedLocale]}
                 <span className="mx-2.5 sm:mx-3 inline-flex align-middle items-center -space-x-2 rtl:space-x-reverse">
                   <img
-                    src="/media/social/ig-DJAecEGMcm1-1.webp"
+                    src="/media/social/ig-CwVltyRSO9d-1.webp"
                     alt=""
                     className="inline-block h-10 w-10 sm:h-14 sm:w-14 rounded-full object-cover object-top border-2 border-white shadow-md"
                   />
@@ -151,11 +151,11 @@ export default async function LocaleHomePage({
             <div className="relative overflow-hidden rounded-[40px] bg-[#F3F4F7] shadow-[0_30px_80px_rgba(9,10,15,0.10)]">
               <picture>
                 <source
-                  srcSet="/media/social/ig-CwVltyRSO9d-1.avif"
+                  srcSet="/media/social/ig-DJAecEGMcm1-1.avif"
                   type="image/avif"
                 />
                 <img
-                  src="/media/social/ig-CwVltyRSO9d-1.webp"
+                  src="/media/social/ig-DJAecEGMcm1-1.webp"
                   alt={SITE_IDENTITY.name[typedLocale]}
                   className="aspect-[4/5] w-full object-cover object-[50%_20%]"
                 />

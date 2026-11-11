@@ -53,7 +53,13 @@ export default async function WordsAndStoriesPage({
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#090A0F] leading-[1.12]">
+            <h1
+              className={`font-extrabold tracking-tight text-[#090A0F] ${
+                isAr
+                  ? "text-3xl sm:text-5xl lg:text-[3.35rem] leading-[1.28]"
+                  : "text-4xl sm:text-5xl lg:text-6xl leading-[1.1]"
+              }`}
+            >
               {isAr
                 ? "كلمات وقصص: حين تمنح الكلمةُ المكتوبة معنىً للصورة"
                 : "Words & Stories: Where Written Craft Anchors the Broadcast"}

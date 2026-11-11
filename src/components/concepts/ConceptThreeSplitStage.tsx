@@ -4,9 +4,11 @@ import {
   Play,
   Mail,
   MapPin,
-  ExternalLink,
   ArrowUpLeft,
   ArrowUpRight,
+  Cpu,
+  GraduationCap,
+  ExternalLink,
 } from "lucide-react";
 import {
   type Locale,
@@ -23,17 +25,13 @@ import {
   CV_NEWSROOM_TOOLS,
 } from "@/data/cv-profile-data";
 import { LIFE_MOMENTS } from "@/data/life-and-press-data";
-import {
-  NidalSignature,
-  SocialPlatformIcon,
-} from "@/components/brand/BrandVectors";
+import { SocialPlatformIcon } from "@/components/brand/BrandVectors";
 
 /**
- * CONCEPT 03: "THE CINEMATIC SPLIT MONOGRAPH"
- * A24 Documentary × Kinfolk Warm Desert Linen & Espresso
- * Full-viewport 50/50 edge-to-edge split poster:
- * Half full-bleed uncropped portrait, half Warm Desert Linen (#F2EAE0) & Espresso (#1A1412)
- * with Burnished Terracotta Bronze (#B87D4B) and Deep Crimson (#C4202B).
+ * MODERN CONCEPT 03: "FULL-SCREEN MASTERCLASS / STREAMING CINEMA"
+ * 100vh Frameless Widescreen Immersive Stage — zero boxes above the fold!
+ * Full-bleed studio photography seamlessly blended into deep cinema carbon (#06070A),
+ * ultra-bold geometric display type, circular glass play trigger, and translucent bottom stats dock.
  */
 export function ConceptThreeSplitStage({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
@@ -46,271 +44,275 @@ export function ConceptThreeSplitStage({ locale }: { locale: Locale }) {
     <div
       dir={isAr ? "rtl" : "ltr"}
       lang={locale}
-      className={`min-h-screen bg-[#F2EAE0] text-[#1A1412] selection:bg-[#C4202B] selection:text-white ${
-        isAr ? "font-sans-ar" : "font-sans-en"
+      className={`min-h-screen bg-[#06070A] text-white selection:bg-[#E51E2E] selection:text-white ${
+        isAr ? "font-modern-ar" : "font-modern-en"
       }`}
     >
-      {/* FULL-VIEWPORT 50/50 SPLIT CINEMATIC STAGE */}
-      <section className="relative grid min-h-[94vh] grid-cols-1 lg:grid-cols-12 border-b border-[#1A1412]/15">
-        {/* Literary Linen Half (6 cols) */}
-        <div className="lg:col-span-6 flex flex-col justify-between bg-[#F2EAE0] px-6 py-8 sm:px-12 lg:px-14 lg:py-10">
-          {/* Minimalist Top Rail */}
-          <div className="flex items-center justify-between gap-4 border-b border-[#1A1412]/12 pb-5">
-            <div className="flex items-center gap-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#C4202B]" />
-              <span className="text-xs font-bold tracking-widest uppercase text-[#6E5D4F]">
-                {isAr ? "العربية · الحدث" : "AL ARABIYA · AL HADATH"}
+      {/* 100VH FRAMELESS IMMERSIVE MASTERCLASS-STYLE HERO */}
+      <section className="relative min-h-screen w-full overflow-hidden flex flex-col justify-between">
+        {/* Ambient Studio Architecture Layer */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+          <img
+            src="/media/derivatives/studio-glass-architecture.webp"
+            alt=""
+            className="h-full w-full object-cover opacity-20 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#06070A]/80 via-[#06070A]/55 to-[#06070A]" />
+        </div>
+
+        {/* Seamless Unboxed Portrait Positioned Opposite the Text */}
+        <div
+          aria-hidden="true"
+          className={`pointer-events-none absolute top-0 bottom-0 z-10 w-full lg:w-[56%] ${
+            isAr ? "left-0" : "right-0"
+          }`}
+        >
+          <img
+            src="/media/derivatives/portrait-01-studio-pinstripe.webp"
+            alt=""
+            className="h-full w-full object-cover object-[50%_18%] opacity-90"
+          />
+          {/* Smooth Multi-Stop Cinema Vignette Blending Portrait Seamlessly Into Background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: isAr
+                ? "linear-gradient(to left, #06070A 4%, rgba(6,7,10,0.68) 32%, rgba(6,7,10,0.08) 68%, rgba(6,7,10,0.5) 100%), linear-gradient(to top, #06070A 6%, transparent 38%)"
+                : "linear-gradient(to right, #06070A 4%, rgba(6,7,10,0.68) 32%, rgba(6,7,10,0.08) 68%, rgba(6,7,10,0.5) 100%), linear-gradient(to top, #06070A 6%, transparent 38%)",
+            }}
+          />
+        </div>
+
+        {/* Transparent Floating Cinema Top Bar */}
+        <header className="relative z-30 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-7 sm:px-10">
+          <div className="flex items-center gap-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#E51E2E] shadow-[0_0_12px_#E51E2E]" />
+            <span className="text-base font-extrabold tracking-tight text-white">
+              {SITE_IDENTITY.name[locale]}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-6 text-xs font-semibold text-white/80">
+            <a href="#cinema-reels" className="hidden sm:inline hover:text-white">
+              {isAr ? "البث المرئي" : "Watch"}
+            </a>
+            <a href="#cinema-career" className="hidden sm:inline hover:text-white">
+              {isAr ? "السيرة المهنية" : "Career"}
+            </a>
+            <Link
+              href={`/concepts/${isAr ? "en" : "ar"}/3`}
+              className="rounded-full border border-white/20 bg-black/30 px-3.5 py-1.5 backdrop-blur-md hover:bg-white/15"
+            >
+              {isAr ? "EN" : "عربي"}
+            </Link>
+            <a
+              href={`mailto:${CV_CONTACT_INFO.email}`}
+              className="rounded-full bg-white px-5 py-2 font-bold text-[#06070A] transition hover:bg-[#E51E2E] hover:text-white"
+            >
+              {isAr ? "تواصل" : "Connect"}
+            </a>
+          </div>
+        </header>
+
+        {/* Main Widescreen Cinema Overlay Copy */}
+        <div className="relative z-30 mx-auto w-full max-w-7xl px-6 py-12 sm:px-10 my-auto">
+          <div className="max-w-2xl space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-bold text-white backdrop-blur-xl">
+              <span className="text-[#FF4252]">● LIVE</span>
+              <span>·</span>
+              <span>
+                {isAr
+                  ? "العربية والحدث · الرياض ودبي"
+                  : "AL ARABIYA & AL HADATH · RIYADH & DUBAI"}
               </span>
             </div>
 
-            <div className="flex items-center gap-5 text-xs font-semibold text-[#1A1412]">
-              <a href="#monograph-cv" className="hover:text-[#C4202B]">
-                {isAr ? "السيرة" : "CV"}
-              </a>
-              <a href="#monograph-films" className="hover:text-[#C4202B]">
-                {isAr ? "الأعمال" : "Works"}
-              </a>
-              <Link
-                href={`/concepts/${isAr ? "en" : "ar"}/3`}
-                className="rounded-full border border-[#1A1412]/25 px-3 py-1 text-[11px]"
-              >
-                {isAr ? "EN" : "عربي"}
-              </Link>
-            </div>
-          </div>
-
-          {/* Center Monumental Narrative */}
-          <div className="my-auto py-10 space-y-7">
-            <div className="inline-flex items-center gap-3 text-xs font-semibold text-[#B87D4B]">
-              <span>01 — MONOGRAPH</span>
-              <span className="h-[1px] w-10 bg-[#B87D4B]" />
-              <span>{isAr ? "الخرطوم · دبي · الرياض" : "KHARTOUM · DUBAI · RIYADH"}</span>
-            </div>
-
             <h1
-              className={`text-[#1A1412] leading-[1.06] ${
+              className={`font-extrabold tracking-tight text-white drop-shadow-2xl ${
                 isAr
-                  ? "font-serif-ar text-5xl sm:text-6xl xl:text-7xl font-bold"
-                  : "font-display-en text-5xl sm:text-6xl xl:text-7xl font-semibold"
+                  ? "text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.12]"
+                  : "font-syne text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.02]"
               }`}
             >
               {SITE_IDENTITY.name[locale]}
             </h1>
 
-            {/* Vertical Thread Quote */}
-            <div className="relative border-s-2 border-[#C4202B] ps-5 py-1 space-y-2">
-              <p
-                className={`text-[#1A1412] ${
-                  isAr
-                    ? "font-serif-ar text-2xl sm:text-3xl font-bold leading-[1.5]"
-                    : "font-display-en text-2xl sm:text-3xl italic leading-snug"
-                }`}
-              >
-                {isAr
-                  ? `«${NIDAL_SIGNATURE_LINE.ar}»`
-                  : `“${NIDAL_SIGNATURE_LINE.en}”`}
-              </p>
-              <p className="text-xs font-semibold tracking-wider text-[#7A6858] uppercase">
-                {SITE_IDENTITY.verifiedTitle[locale]}
-              </p>
-            </div>
+            <p className="text-xl sm:text-2xl font-bold text-white/95 leading-relaxed">
+              «{NIDAL_SIGNATURE_LINE[locale]}»
+            </p>
 
-            <p className="max-w-xl text-sm sm:text-base leading-[1.85] text-[#4A3F37]">
+            <p className="max-w-xl text-sm sm:text-base leading-[1.8] text-white/70">
               {CV_BIO_SUMMARY[locale]}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* MasterClass-Style Play Trigger + Secondary Action */}
+            <div className="flex flex-wrap items-center gap-5 pt-2">
               <a
-                href="#monograph-films"
-                className="inline-flex items-center gap-2.5 rounded-none bg-[#1A1412] px-7 py-4 text-xs font-bold tracking-wider text-[#F2EAE0] uppercase transition hover:bg-[#C4202B]"
+                href="#cinema-reels"
+                className="group inline-flex items-center gap-4"
               >
-                <Play className="h-3.5 w-3.5 fill-current" />
-                <span>{isAr ? "قاعة العرض المرئي" : "Enter Screening Room"}</span>
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#E51E2E] text-white shadow-[0_0_40px_rgba(229,30,46,0.6)] transition group-hover:scale-110">
+                  <Play className="h-5 w-5 fill-current ms-0.5" />
+                </span>
+                <span className="text-start">
+                  <span className="block text-sm font-extrabold text-white">
+                    {isAr ? "شاهد العرض المرئي" : "Watch Broadcast Reel"}
+                  </span>
+                  <span className="block text-xs text-white/60">
+                    {isAr ? "مختارات التقديم والحوارات" : "Selected TV & Digital Segments"}
+                  </span>
+                </span>
               </a>
+
               <a
-                href={`mailto:${CV_CONTACT_INFO.email}`}
-                className="inline-flex items-center gap-2 border border-[#1A1412]/30 px-6 py-4 text-xs font-bold text-[#1A1412] transition hover:border-[#1A1412] hover:bg-white/60"
+                href="#cinema-career"
+                className="rounded-full border border-white/20 bg-white/[0.07] px-6 py-3.5 text-xs font-bold text-white backdrop-blur-xl transition hover:bg-white hover:text-black"
               >
-                <Mail className="h-3.5 w-3.5 text-[#C4202B]" />
-                <span>{isAr ? "مراسلة مباشرة" : "Direct Inquiry"}</span>
+                {isAr ? "استعرض المسيرة الكاملة" : "View Full CV"}
               </a>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Signature & Mini Stats Strip */}
-          <div className="flex flex-wrap items-end justify-between gap-6 border-t border-[#1A1412]/12 pt-6">
-            <div className="flex gap-7">
-              {CV_IMPACT_STATS.slice(0, 3).map((st, idx) => (
-                <div key={idx}>
-                  <div className="font-display-en text-2xl sm:text-3xl font-bold text-[#1A1412]">
-                    {st.value[locale]}
-                  </div>
-                  <div className="text-[11px] font-medium text-[#6E5D4F]">
+        {/* Bottom Translucent Frosted Glass Telemetry Bar */}
+        <div className="relative z-30 border-t border-white/10 bg-black/45 backdrop-blur-2xl">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-6 sm:px-10 lg:grid-cols-4">
+            {CV_IMPACT_STATS.map((st, idx) => (
+              <div key={idx} className="flex items-baseline gap-3">
+                <span className="font-mono-code text-2xl sm:text-3xl font-extrabold text-white">
+                  {st.value[locale]}
+                </span>
+                <div>
+                  <div className="text-xs font-bold text-white/90">
                     {st.label[locale]}
                   </div>
-                </div>
-              ))}
-            </div>
-            <NidalSignature className="h-auto w-36" color="#1A1412" />
-          </div>
-        </div>
-
-        {/* Full-Bleed Edge-to-Edge Studio Portrait Half (6 cols) */}
-        <div className="lg:col-span-6 relative min-h-[520px] overflow-hidden bg-[#1A1412]">
-          <picture>
-            <source
-              srcSet="/media/derivatives/portrait-02-saudi-media-forum.avif"
-              type="image/avif"
-            />
-            <img
-              src="/media/derivatives/portrait-02-saudi-media-forum.webp"
-              alt={SITE_IDENTITY.name[locale]}
-              className="h-full w-full object-cover object-[50%_20%]"
-            />
-          </picture>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1412]/85 via-transparent to-[#1A1412]/20" />
-
-          {/* Film-Frame Corner Metadata */}
-          <div className={`absolute top-6 end-6 rounded-none border border-[#F2EAE0]/30 bg-[#1A1412]/65 px-4 py-2 text-[11px] font-medium text-[#F2EAE0] backdrop-blur-md ${isAr ? "" : "font-mono-code"}`}>
-            {isAr ? "الرياض · المنتدى السعودي للإعلام" : "RIYADH · SAUDI MEDIA FORUM"}
-          </div>
-
-          {/* Overlapping Warm Espresso Card at Bottom */}
-          <div className="absolute bottom-6 start-6 end-6 sm:end-auto sm:max-w-sm border border-[#F2EAE0]/20 bg-[#1A1412]/90 p-5 text-[#F2EAE0] backdrop-blur-xl space-y-2">
-            <div className="flex items-center justify-between text-[11px] font-mono-code text-[#D8A47F]">
-              <span>{CV_EDUCATION.year} · B.SC. HONS</span>
-              <span>AR · EN</span>
-            </div>
-            <div className="text-sm font-bold">
-              {CV_EDUCATION.degree[locale]} — {CV_EDUCATION.university[locale]}
-            </div>
-            <p className="text-xs leading-relaxed text-[#C9BDB0]">
-              {isAr
-                ? "خلفية هندسية تدعم توظيف الذكاء الاصطناعي وأنظمة البث الحديثة في غرفة الأخبار."
-                : "Software engineering foundation powering AI-assisted journalism and modern broadcast workflows."}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: Warm Espresso Charcoal Filmstrip — Broadcasts */}
-      <section id="monograph-films" className="bg-[#1A1412] py-20 text-[#F2EAE0]">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 space-y-12">
-          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#F2EAE0]/15 pb-6">
-            <div>
-              <span className="font-mono-code text-xs tracking-widest text-[#D8A47F] uppercase">
-                02 — SCREENING ARCHIVE
-              </span>
-              <h2
-                className={`mt-2 text-3xl sm:text-5xl ${
-                  isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                }`}
-              >
-                {isAr ? "مختارات من الشاشة والمنبر" : "On-Air & Stage Anthology"}
-              </h2>
-            </div>
-            <Link
-              href={`/${locale}/on-screen`}
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#D8A47F] hover:text-white"
-            >
-              <span>{isAr ? "مشاهدة جميع المواد" : "View Full Screening Room"}</span>
-              <ArrowIcon className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {videoSelections.map((vid, idx) => (
-              <a
-                key={vid.slug}
-                href={vid.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block space-y-4 border border-[#F2EAE0]/12 bg-[#231C19] p-4 transition hover:border-[#D8A47F]"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden bg-black">
-                  <img
-                    src={vid.posterAsset}
-                    alt={vid.title[locale]}
-                    style={{ objectPosition: vid.posterFocalPoint }}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <span className="absolute top-3 start-3 bg-[#1A1412]/85 px-2.5 py-1 font-mono-code text-[10px] text-[#D8A47F]">
-                    REEL 0{idx + 1} · {vid.duration}
-                  </span>
-                </div>
-                <div className="space-y-2 px-1 pb-2">
-                  <div className="text-[11px] text-[#D8A47F]">
-                    {vid.broadcasterOrPlatform[locale]}
+                  <div className="hidden sm:block text-[11px] text-white/50 truncate max-w-[200px]">
+                    {st.detail[locale]}
                   </div>
-                  <h3
-                    className={`text-xl text-[#F2EAE0] group-hover:text-[#D8A47F] ${
-                      isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                    }`}
-                  >
-                    {vid.title[locale]}
-                  </h3>
-                  <p className="text-xs leading-relaxed text-[#BFB3A6] line-clamp-2">
-                    {vid.summary[locale]}
-                  </p>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: Museum-Grade CV Monograph on Warm Linen */}
-      <section id="monograph-cv" className="bg-[#F2EAE0] py-20 text-[#1A1412] border-b border-[#1A1412]/15">
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 space-y-12">
-          <div className="space-y-3">
-            <span className="font-mono-code text-xs tracking-widest text-[#C4202B] uppercase">
-              03 — CURRICULUM VITAE (2015 – 2026)
+      {/* SECTION 2: Widescreen Streaming Rail */}
+      <section id="cinema-reels" className="mx-auto max-w-7xl px-6 py-24 sm:px-10 space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="text-xs font-extrabold tracking-widest text-[#FF4252] uppercase">
+              {isAr ? "قاعة البث المرئي" : "NOW STREAMING"}
             </span>
-            <h2
-              className={`text-3xl sm:text-5xl ${
-                isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-              }`}
-            >
-              {isAr
-                ? "السجل المهني الكامل عبر الإذاعة والتلفزيون وغرف الأخبار"
-                : "Complete Career Record Across Radio, TV & Pan-Arab Newsrooms"}
+            <h2 className="mt-1 text-3xl sm:text-5xl font-extrabold text-white">
+              {isAr ? "أبرز المواد المرئية واللقاءات" : "Featured Broadcasts & Keynotes"}
             </h2>
           </div>
+          <Link
+            href={`/${locale}/on-screen`}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-white/75 hover:text-white"
+          >
+            <span>{isAr ? "مشاهدة الكل" : "Explore All"}</span>
+            <ArrowIcon className="h-4 w-4" />
+          </Link>
+        </div>
 
-          <div className="space-y-6">
-            {CV_EXPERIENCE_TIMELINE.map((entry) => (
-              <div
-                key={entry.id}
-                className="border border-[#1A1412]/15 bg-[#FAF6F0] p-7 sm:p-9 grid grid-cols-1 gap-6 lg:grid-cols-12"
-              >
-                <div className="lg:col-span-4 space-y-2 border-b lg:border-b-0 lg:border-e border-[#1A1412]/12 pb-4 lg:pb-0 lg:pe-6">
-                  <span className={`inline-block bg-[#1A1412] px-3 py-1 text-[11px] font-medium text-[#F2EAE0] ${isAr ? "" : "font-mono-code"}`}>
-                    {entry.period[locale]}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {videoSelections.map((vid) => (
+            <a
+              key={vid.slug}
+              href={vid.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-[16/10] overflow-hidden rounded-3xl bg-zinc-900 shadow-2xl"
+            >
+              <img
+                src={vid.posterAsset}
+                alt={vid.title[locale]}
+                style={{ objectPosition: vid.posterFocalPoint }}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-6 flex flex-col justify-between">
+                <div className="flex items-center justify-between">
+                  <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
+                    {vid.broadcasterOrPlatform[locale]}
                   </span>
-                  <h3
-                    className={`pt-1 text-2xl text-[#1A1412] ${
-                      isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                    }`}
-                  >
-                    {entry.organization[locale]}
-                  </h3>
-                  <p className="text-xs font-medium text-[#7A6858]">
-                    {entry.location[locale]}
-                  </p>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E51E2E] text-white shadow-lg">
+                    <Play className="h-3.5 w-3.5 fill-current" />
+                  </span>
                 </div>
+                <div>
+                  <span className="font-mono-code text-[11px] text-[#FF6B78]">
+                    {vid.duration}
+                  </span>
+                  <h3 className="mt-1 text-lg font-extrabold text-white leading-snug">
+                    {vid.title[locale]}
+                  </h3>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
-                <div className="lg:col-span-8 space-y-5">
-                  {entry.roles.map((r, idx) => (
-                    <div key={idx} className="space-y-2">
-                      <h4 className="text-base font-bold text-[#C4202B]">
-                        {r.title[locale]}
-                      </h4>
-                      <ul className="space-y-1.5 text-sm leading-relaxed text-[#3D332C]">
+      {/* SECTION 3: Modern Minimal Laser-Line Career Section */}
+      <section id="cinema-career" className="border-t border-white/10 bg-[#0A0C12] py-24">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 space-y-12">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <span className="text-xs font-extrabold tracking-widest text-[#FF4252] uppercase">
+                {isAr ? "السجل الوظيفي · 2015 – 2026" : "EXPERIENCE & TECH STACK"}
+              </span>
+              <h2 className="mt-1 text-3xl sm:text-5xl font-extrabold text-white">
+                {isAr ? "المسيرة المهنية وأدوات غرفة الأخبار" : "Career Trajectory & Broadcast Tech"}
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E51E2E]/20 px-3.5 py-1.5 text-xs font-bold text-[#FF6B78]">
+                <GraduationCap className="h-3.5 w-3.5" />
+                {CV_EDUCATION.degree[locale]}
+              </span>
+              {CV_NEWSROOM_TOOLS.slice(0, 4).map((t) => (
+                <span
+                  key={t.name}
+                  className="inline-flex items-center gap-1 rounded-full bg-white/8 px-3.5 py-1.5 font-mono-code text-xs font-semibold text-white"
+                >
+                  <Cpu className="h-3 w-3 text-[#FF4252]" />
+                  {t.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative border-s-2 border-white/15 ps-6 sm:ps-10 space-y-10">
+            {CV_EXPERIENCE_TIMELINE.map((exp) => (
+              <div key={exp.id} className="relative space-y-4">
+                <span
+                  className={`absolute -start-[31px] sm:-start-[47px] top-1.5 h-4 w-4 rounded-full border-4 border-[#0A0C12] ${
+                    exp.isCurrent ? "bg-[#E51E2E] shadow-[0_0_15px_#E51E2E]" : "bg-white/40"
+                  }`}
+                />
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-bold text-[#FF6B78]">
+                    {exp.period[locale]}
+                  </span>
+                  <span className="text-xs text-white/45">· {exp.location[locale]}</span>
+                </div>
+                <h3 className="text-2xl font-extrabold text-white">
+                  {exp.organization[locale]}
+                </h3>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {exp.roles.map((r, idx) => (
+                    <div
+                      key={idx}
+                      className={`rounded-2xl border border-white/8 bg-white/[0.03] p-5 space-y-2 ${
+                        exp.roles.length === 1 ? "md:col-span-2" : ""
+                      }`}
+                    >
+                      <div className="text-sm font-bold text-white">{r.title[locale]}</div>
+                      <ul className="space-y-1.5 text-xs leading-relaxed text-white/70">
                         {r.bullets[locale].map((b, bIdx) => (
-                          <li key={bIdx} className="flex items-start gap-2.5">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#1A1412]" />
-                            <span>{b}</span>
-                          </li>
+                          <li key={bIdx}>• {b}</li>
                         ))}
                       </ul>
                     </div>
@@ -319,101 +321,69 @@ export function ConceptThreeSplitStage({ locale }: { locale: Locale }) {
               </div>
             ))}
           </div>
-
-          {/* Newsroom Tools Strip */}
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#1A1412]/15 pt-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#6E5D4F]">
-              {isAr ? "الأدوات والأنظمة الإخبارية:" : "Newsroom Systems:"}
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {CV_NEWSROOM_TOOLS.map((t) => (
-                <span
-                  key={t.name}
-                  className="border border-[#1A1412]/20 bg-white px-3.5 py-1.5 font-mono-code text-xs font-semibold text-[#1A1412]"
-                >
-                  {t.name}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* SECTION 4: Gallery Triptych */}
-      <section className="bg-[#FAF6F0] py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 space-y-10">
-          <h2
-            className={`text-3xl sm:text-4xl text-[#1A1412] ${
-              isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-            }`}
-          >
-            {isAr ? "مختارات من يومياتها في دبي" : "Selected Visual Notes from Dubai"}
-          </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {lifeSelections.map((m) => (
-              <div key={m.id} className="space-y-3">
-                <img
-                  src={m.imageWebp}
-                  alt={m.title[locale]}
-                  style={{ objectPosition: m.focalPoint }}
-                  className="aspect-[4/5] w-full object-cover border border-[#1A1412]/15"
-                />
-                <div className="text-xs font-bold text-[#C4202B]">
-                  {m.location[locale]}
-                </div>
-                <h3 className="font-serif-ar text-xl font-bold text-[#1A1412]">
-                  {m.title[locale]}
-                </h3>
+      {/* SECTION 4: Frameless Rounded-3xl Visual Gallery */}
+      <section className="mx-auto max-w-7xl px-6 py-24 sm:px-10 space-y-10">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          {isAr ? "من كواليس العمل واليوميات" : "Behind the Scenes & Moments"}
+        </h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {lifeSelections.map((m) => (
+            <div key={m.id} className="group relative aspect-[4/5] overflow-hidden rounded-3xl">
+              <img
+                src={m.imageWebp}
+                alt={m.title[locale]}
+                style={{ objectPosition: m.focalPoint }}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent p-6 flex flex-col justify-end">
+                <span className="text-xs font-bold text-[#FF6B78]">{m.location[locale]}</span>
+                <h3 className="mt-1 text-lg font-extrabold text-white">{m.title[locale]}</h3>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Warm Espresso Footer */}
-      <footer className="bg-[#1A1412] py-12 text-[#F2EAE0]">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between text-xs">
-          <div className="space-y-1">
-            <div className="font-serif-ar text-lg font-bold">
-              {SITE_IDENTITY.name[locale]}
-            </div>
-            <div className="flex items-center gap-3 text-[#BFB3A6]">
-              <span className="inline-flex items-center gap-1">
-                <MapPin className="h-3.5 w-3.5 text-[#D8A47F]" />
-                {CV_CONTACT_INFO.location[locale]}
-              </span>
-              <span>·</span>
-              <a
-                href={`mailto:${CV_CONTACT_INFO.email}`}
-                dir="ltr"
-                className="font-mono-code underline"
-              >
-                {CV_CONTACT_INFO.email}
-              </a>
-            </div>
+      {/* Sleek Cinema Footer */}
+      <footer className="border-t border-white/10 bg-black py-12">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between text-xs text-white/60">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-extrabold text-white">{SITE_IDENTITY.name[locale]}</span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <MapPin className="h-3.5 w-3.5 text-[#E51E2E]" />
+              {CV_CONTACT_INFO.location[locale]}
+            </span>
+            <span>·</span>
+            <a href={`mailto:${CV_CONTACT_INFO.email}`} dir="ltr" className="text-white underline">
+              {CV_CONTACT_INFO.email}
+            </a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {(["linkedin", "instagram", "x", "facebook"] as const).map((p) => (
               <a
                 key={p}
                 href={SITE_IDENTITY.socialLinks[p].url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center border border-[#F2EAE0]/25 text-[#F2EAE0] transition hover:bg-[#C4202B] hover:border-[#C4202B]"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#E51E2E]"
               >
                 <SocialPlatformIcon platform={p} className="h-4 w-4" />
               </a>
             ))}
           </div>
 
-          <div className="text-[#BFB3A6]">
+          <div>
             Built by{" "}
             <a
               href="https://nexorayyc.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-white underline decoration-[#D8A47F] underline-offset-4"
+              className="font-bold text-white underline decoration-[#E51E2E] underline-offset-4"
             >
               Nexora
             </a>{" "}

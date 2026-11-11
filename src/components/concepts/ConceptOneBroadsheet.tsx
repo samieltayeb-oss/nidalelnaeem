@@ -1,13 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ArrowUpLeft,
-  ArrowUpRight,
   Play,
   Mail,
   MapPin,
+  Sparkles,
+  ArrowUpLeft,
+  ArrowUpRight,
+  Radio,
+  Tv,
+  Cpu,
   GraduationCap,
-  CheckCircle2,
   ExternalLink,
 } from "lucide-react";
 import {
@@ -25,536 +28,435 @@ import {
   CV_NEWSROOM_TOOLS,
 } from "@/data/cv-profile-data";
 import { LIFE_MOMENTS } from "@/data/life-and-press-data";
-import {
-  AlHadathMark,
-  NidalSignature,
-  SocialPlatformIcon,
-} from "@/components/brand/BrandVectors";
+import { SocialPlatformIcon } from "@/components/brand/BrandVectors";
 
 /**
- * CONCEPT 01: "THE IVORY BROADSHEET"
- * Vogue Arabia × Financial Times Weekend Magazine
- * 100% Light-First Haute Editorial — Sunlit Warm Ivory (#FAF7F2), Deep Espresso Ink (#111318),
- * Vermilion Accent (#D91E2A), Newspaper Dateline, Monumental Masthead, 3-Column Magazine Spread.
+ * MODERN CONCEPT 01: "LUMINA SPATIAL GLASS" (2026 Framer / Linear / Apple Vision UI)
+ * Zero serif, zero beige/gold! Ultra-clean Alexandria + Plus Jakarta Sans geometric display,
+ * soft aurora light mesh (#05060B + ruby/violet ambient glow), centered hero with
+ * a 3-card spatial perspective portrait showcase, pill marquee, and sleek glass timeline.
  */
 export function ConceptOneBroadsheet({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
   const ArrowIcon = isAr ? ArrowUpLeft : ArrowUpRight;
 
   const videoSelections = WORK_ITEMS.filter((w) => w.featuredOnScreen).slice(0, 3);
-  const alArabiyaArticle = WORK_ITEMS.find(
-    (w) => w.slug === "alarabiya-sudan-protest-lexicon"
-  )!;
   const lifeSelections = LIFE_MOMENTS.slice(0, 3);
 
   return (
     <div
       dir={isAr ? "rtl" : "ltr"}
       lang={locale}
-      className={`min-h-screen bg-[#FAF7F2] text-[#111318] selection:bg-[#D91E2A] selection:text-white ${
-        isAr ? "font-sans-ar" : "font-sans-en"
+      className={`min-h-screen bg-[#05060B] text-white selection:bg-[#FF2438] selection:text-white overflow-x-hidden ${
+        isAr ? "font-modern-ar" : "font-modern-en"
       }`}
     >
-      {/* Top Broadsheet Dateline & Editorial Masthead */}
-      <header className="border-b border-[#111318]/15 bg-[#FAF7F2]/95 backdrop-blur-md sticky top-0 z-40">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Upper Fine Dateline */}
-          <div className="hidden sm:flex items-center justify-between border-b border-[#111318]/10 py-2 text-[11px] font-medium text-[#5A554C]">
-            <div className="flex items-center gap-4">
-              <span className="inline-flex items-center gap-1.5 font-semibold text-[#D91E2A]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#D91E2A]" />
-                <span>
-                  {isAr
-                    ? "مجموعة MBC · قناتي العربية والحدث"
-                    : "MBC GROUP · AL ARABIYA & AL HADATH"}
-                </span>
-              </span>
-              <span>·</span>
-              <span>
-                {isAr
-                  ? "الرياض · دبي · الخرطوم"
-                  : "RIYADH · DUBAI · KHARTOUM"}
-              </span>
-            </div>
+      {/* 2026 Soft Spatial Aurora Mesh Orbs */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[540px] w-[960px] rounded-full bg-gradient-to-r from-[#FF2438]/20 via-[#7C3AED]/15 to-[#3B82F6]/15 blur-[130px]" />
+        <div className="absolute top-[45%] -start-32 h-[420px] w-[420px] rounded-full bg-[#FF2438]/10 blur-[140px]" />
+        <div className="absolute top-[35%] -end-32 h-[420px] w-[420px] rounded-full bg-indigo-500/10 blur-[140px]" />
+      </div>
 
-            <div className="flex items-center gap-5">
-              <a
-                href={`mailto:${CV_CONTACT_INFO.email}`}
-                dir="ltr"
-                className="font-mono-code hover:text-[#111318]"
-              >
-                {CV_CONTACT_INFO.email}
-              </a>
-              <Link
-                href={`/concepts/${isAr ? "en" : "ar"}/1`}
-                className="font-semibold text-[#111318] underline underline-offset-4"
-              >
-                {isAr ? "English Edition" : "النسخة العربية"}
-              </Link>
-            </div>
-          </div>
+      {/* Floating Centered Capsule Glass Navbar */}
+      <header className="sticky top-5 z-40 flex justify-center px-4">
+        <div className="flex h-14 w-full max-w-5xl items-center justify-between rounded-full border border-white/12 bg-white/[0.04] px-3 sm:px-5 shadow-[0_16px_40px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
+          <a href="#top" className="flex items-center gap-2.5 ps-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-[#FF2438] to-[#FF6B78] text-xs font-extrabold text-white shadow-lg shadow-[#FF2438]/30">
+              N
+            </span>
+            <span className="text-sm font-bold tracking-tight text-white">
+              {SITE_IDENTITY.name[locale]}
+            </span>
+          </a>
 
-          {/* Main Magazine Nav Bar */}
-          <div className="flex h-16 items-center justify-between gap-4">
-            <a href="#top" className="flex items-baseline gap-3">
-              <span
-                className={`text-2xl tracking-tight text-[#111318] ${
-                  isAr
-                    ? "font-serif-ar font-bold"
-                    : "font-display-en font-bold uppercase tracking-[0.08em]"
-                }`}
-              >
-                {SITE_IDENTITY.name[locale]}
-              </span>
-              <span className="hidden md:inline-block text-xs text-[#6E675C]">
-                {isAr ? "صحفية ومقدمة أخبار" : "Journalist & News Presenter"}
-              </span>
+          <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-white/70">
+            <a href="#work" className="hover:text-white transition">
+              {isAr ? "الأعمال المرئية" : "Broadcasts"}
             </a>
+            <a href="#experience" className="hover:text-white transition">
+              {isAr ? "الخبرات" : "Experience"}
+            </a>
+            <a href="#stack" className="hover:text-white transition">
+              {isAr ? "التقنية والذكاء الاصطناعي" : "AI & Tech"}
+            </a>
+            <a href="#moments" className="hover:text-white transition">
+              {isAr ? "اليوميات" : "Moments"}
+            </a>
+          </nav>
 
-            <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-[#2E2B26]">
-              <a href="#profile" className="hover:text-[#D91E2A] transition">
-                {isAr ? "الملف المهني" : "Profile"}
-              </a>
-              <a href="#career" className="hover:text-[#D91E2A] transition">
-                {isAr ? "السيرة والخبرات" : "Experience"}
-              </a>
-              <a href="#broadcasts" className="hover:text-[#D91E2A] transition">
-                {isAr ? "على الشاشة" : "On Screen"}
-              </a>
-              <a href="#journal" className="hover:text-[#D91E2A] transition">
-                {isAr ? "كلمات ويوميات" : "Words & Life"}
-              </a>
-            </nav>
-
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/concepts/${isAr ? "en" : "ar"}/1`}
+              className="rounded-full border border-white/12 bg-white/[0.06] px-3.5 py-1.5 text-xs font-semibold text-white/90 hover:bg-white/15 transition"
+            >
+              {isAr ? "EN" : "عربي"}
+            </Link>
             <a
               href={`mailto:${CV_CONTACT_INFO.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-[#111318] px-4 py-2 text-xs font-semibold text-[#FAF7F2] transition hover:bg-[#D91E2A]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-bold text-[#05060B] transition hover:bg-[#FF2438] hover:text-white"
             >
-              <Mail className="h-3.5 w-3.5" />
-              <span>{isAr ? "تواصل مباشر" : "Get in Touch"}</span>
+              <span>{isAr ? "تواصل معي" : "Let’s Talk"}</span>
+              <ArrowIcon className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
       </header>
 
-      {/* HERO SPREAD: Monumental Masthead + 3-Column Magazine Cover */}
-      <section id="top" className="border-b border-[#111318]/15 pt-8 pb-16 sm:pt-12 sm:pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Giant Full-Width Editorial Title Banner */}
-          <div className="border-b-2 border-[#111318] pb-9 mb-10">
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-              <span className="inline-flex items-center gap-2 text-xs font-bold tracking-wider text-[#D91E2A] uppercase">
-                <span>
-                  {isAr
-                    ? "بورتريه صحفي · إصدار خاص"
-                    : "MONOGRAPH EDITION · SENIOR JOURNALIST & PRESENTER"}
-                </span>
-              </span>
-              <span className={`text-xs font-medium text-[#6E675C] ${isAr ? "" : "font-mono-code"}`}>
-                {isAr ? "2015 — 2026 · +7 سنوات في العربية والحدث" : "2015 — 2026 · 7+ YRS AL ARABIYA & AL HADATH"}
-              </span>
-            </div>
-
-            <h1
-              className={`text-[#111318] ${
-                isAr
-                  ? "font-serif-ar text-5xl sm:text-7xl lg:text-[5.4rem] font-bold leading-[1.22]"
-                  : "font-display-en text-5xl sm:text-7xl lg:text-[6.2rem] font-semibold leading-[1.04] tracking-tight"
-              }`}
-            >
-              {SITE_IDENTITY.name[locale]}
-            </h1>
+      {/* CENTER-STAGE SPATIAL HERO */}
+      <section id="top" className="relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center space-y-6">
+          {/* Live Glass Status Pill */}
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 text-xs font-medium text-white/90 backdrop-blur-xl">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF2438] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FF2438]" />
+            </span>
+            <span>
+              {isAr
+                ? "مجموعة MBC · قناتي العربية والحدث · الرياض"
+                : "MBC Group · Al Arabiya & Al Hadath · Riyadh"}
+            </span>
           </div>
 
-          {/* Asymmetric 3-Column Vogue / FT Spread */}
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 items-start">
-            {/* Column 1 (4 cols): Signature Quote, Bio & Signature */}
-            <div className="lg:col-span-4 space-y-6 lg:pe-4 lg:border-e lg:border-[#111318]/12">
-              <div className="inline-block border-b-2 border-[#D91E2A] pb-1 text-xs font-bold text-[#D91E2A]">
-                {isAr ? "الرحلة في سطر" : "THE SIGNATURE LINE"}
-              </div>
+          {/* Giant Modern Geometric Headline */}
+          <h1
+            className={`font-extrabold tracking-tight bg-gradient-to-b from-white via-white to-white/65 bg-clip-text text-transparent ${
+              isAr
+                ? "text-4xl sm:text-6xl lg:text-7xl leading-[1.18] py-1"
+                : "text-5xl sm:text-7xl lg:text-[5.2rem] leading-[1.05]"
+            }`}
+          >
+            {SITE_IDENTITY.name[locale]}
+          </h1>
 
-              <blockquote
-                className={`text-[#111318] leading-[1.45] ${
-                  isAr
-                    ? "font-serif-ar text-2xl sm:text-3xl font-bold"
-                    : "font-display-en text-2xl sm:text-3xl italic font-medium"
-                }`}
-              >
-                {isAr
-                  ? `«${NIDAL_SIGNATURE_LINE.ar}»`
-                  : `“${NIDAL_SIGNATURE_LINE.en}”`}
-              </blockquote>
+          {/* Modern Glowing Pill Quote */}
+          <div className="mx-auto inline-flex max-w-3xl items-center gap-3 rounded-2xl border border-white/15 bg-gradient-to-r from-[#FF2438]/15 via-white/[0.06] to-indigo-500/15 px-5 py-3.5 backdrop-blur-xl shadow-2xl">
+            <Radio className="hidden sm:block h-4 w-4 shrink-0 text-[#FF2438]" />
+            <p className="text-base sm:text-xl font-semibold text-white leading-relaxed">
+              {NIDAL_SIGNATURE_LINE[locale]}
+            </p>
+            <Tv className="hidden sm:block h-4 w-4 shrink-0 text-indigo-400" />
+          </div>
 
-              <p className="text-sm sm:text-base leading-[1.85] text-[#3E3A33]">
-                {CV_BIO_SUMMARY[locale]}
-              </p>
+          <p className="mx-auto max-w-2xl text-sm sm:text-base leading-[1.8] text-slate-400">
+            {CV_BIO_SUMMARY[locale]}
+          </p>
 
-              <div className="pt-1">
-                <NidalSignature className="h-auto w-44" color="#111318" />
-              </div>
+          {/* Dual Modern Pill Actions */}
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+            <a
+              href="#work"
+              className="inline-flex items-center gap-2.5 rounded-full bg-[#FF2438] px-7 py-3.5 text-xs sm:text-sm font-bold text-white shadow-[0_12px_35px_rgba(255,36,56,0.4)] transition hover:scale-[1.02] hover:bg-[#e31b2e]"
+            >
+              <Play className="h-4 w-4 fill-current" />
+              <span>{isAr ? "شاهد الأعمال المرئية" : "Watch Featured Reels"}</span>
+            </a>
+            <a
+              href="#experience"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-7 py-3.5 text-xs sm:text-sm font-semibold text-white backdrop-blur-xl transition hover:bg-white/12"
+            >
+              <span>{isAr ? "استعراض المسيرة الكاملة" : "Explore Career & CV"}</span>
+            </a>
+          </div>
+        </div>
 
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="#broadcasts"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#D91E2A] px-6 py-3 text-xs font-semibold text-white shadow-md transition hover:bg-[#b51621]"
-                >
-                  <Play className="h-3.5 w-3.5 fill-current" />
-                  <span>{isAr ? "شاهد المختارات المرئية" : "Watch Broadcasts"}</span>
-                </a>
-                <a
-                  href="#career"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#111318]/25 bg-white px-5 py-3 text-xs font-semibold text-[#111318] transition hover:bg-[#111318] hover:text-white"
-                >
-                  <span>{isAr ? "السيرة الذاتية الكاملة" : "Full CV Record"}</span>
-                </a>
+        {/* 3-CARD FANNED SPATIAL PORTRAIT SHOWCASE */}
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-12 items-center">
+          {/* Left Tilted Card */}
+          <div className="md:col-span-4 md:-rotate-2 md:translate-y-4 transition duration-500 hover:rotate-0 hover:translate-y-0">
+            <div className="group relative overflow-hidden rounded-[32px] border border-white/15 bg-white/[0.04] p-2.5 shadow-2xl backdrop-blur-xl">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px]">
+                <img
+                  src="/media/social/ig-CwVltyRSO9d-1.webp"
+                  alt=""
+                  className="h-full w-full object-cover object-[50%_20%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 inset-x-4 flex items-center justify-between">
+                  <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
+                    {isAr ? "قناة العربية · دبي" : "Al Arabiya · Dubai"}
+                  </span>
+                  <span className="font-mono-code text-xs font-bold text-white/90">
+                    +50 Channels
+                  </span>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Column 2 (5 cols): Centerpiece Sunlit Editorial Portrait */}
-            <div className="lg:col-span-5">
-              <figure className="border border-[#111318]/20 bg-white p-3 shadow-[0_24px_60px_rgba(17,19,24,0.08)]">
-                <div className="relative overflow-hidden bg-[#EAE4D8]">
-                  <picture>
-                    <source
-                      srcSet="/media/social/ig-CwVltyRSO9d-1.avif"
-                      type="image/avif"
-                    />
-                    <img
-                      src="/media/social/ig-CwVltyRSO9d-1.webp"
-                      alt={SITE_IDENTITY.name[locale]}
-                      className="aspect-[4/5] w-full object-cover object-[50%_20%]"
-                    />
-                  </picture>
-                  <div className="absolute top-3 start-3 bg-white/92 px-3 py-1 text-[11px] font-bold text-[#111318] backdrop-blur-sm">
-                    {isAr ? "قناة العربية · دبي والرياض" : "AL ARABIYA · DUBAI & RIYADH"}
+          {/* Center Hero Studio Card */}
+          <div className="md:col-span-4 z-20 md:scale-105">
+            <div className="relative overflow-hidden rounded-[34px] border border-white/25 bg-gradient-to-b from-white/15 to-white/[0.03] p-2.5 shadow-[0_30px_90px_rgba(255,36,56,0.22)] backdrop-blur-2xl">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[26px]">
+                <img
+                  src="/media/social/ig-DJAecEGMcm1-1.webp"
+                  alt={SITE_IDENTITY.name[locale]}
+                  className="h-full w-full object-cover object-[50%_20%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05060B] via-transparent to-transparent" />
+                <div className="absolute top-4 start-4 rounded-full bg-[#FF2438] px-3.5 py-1 text-[11px] font-bold text-white shadow-lg">
+                  {isAr ? "استوديو الأخبار · مباشر" : "LIVE STUDIO"}
+                </div>
+                <div className="absolute bottom-4 inset-x-4 rounded-2xl border border-white/15 bg-black/65 p-3.5 backdrop-blur-xl">
+                  <div className="text-xs font-bold text-white">
+                    {SITE_IDENTITY.verifiedTitle[locale]}
+                  </div>
+                  <div className="mt-0.5 text-[11px] text-slate-300">
+                    {isAr ? "+7 سنوات في العربية والحدث" : "7+ Years at Al Arabiya & Al Hadath"}
                   </div>
                 </div>
-                <figcaption className="mt-3 flex items-center justify-between text-xs text-[#5A554C] px-1">
-                  <span>{SITE_IDENTITY.verifiedTitle[locale]}</span>
-                  <span className="font-mono-code text-[#D91E2A]">01 / COVER</span>
-                </figcaption>
-              </figure>
+              </div>
             </div>
+          </div>
 
-            {/* Column 3 (3 cols): Vertical Numbers Ledger + Secondary Studio Thumbnail */}
-            <div className="lg:col-span-3 space-y-5 lg:ps-4 lg:border-s lg:border-[#111318]/12">
-              <div className="text-xs font-bold tracking-wider text-[#5A554C] uppercase">
-                {isAr ? "أرقام ومحطات رئيسية" : "CAREER TELEMETRY"}
+          {/* Right Tilted Card */}
+          <div className="md:col-span-4 md:rotate-2 md:translate-y-4 transition duration-500 hover:rotate-0 hover:translate-y-0">
+            <div className="group relative overflow-hidden rounded-[32px] border border-white/15 bg-white/[0.04] p-2.5 shadow-2xl backdrop-blur-xl">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px]">
+                <img
+                  src="/media/derivatives/portrait-02-saudi-media-forum.webp"
+                  alt=""
+                  className="h-full w-full object-cover object-[50%_22%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 inset-x-4 flex items-center justify-between">
+                  <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
+                    {isAr ? "الرياض · السعودية" : "Riyadh · KSA"}
+                  </span>
+                  <span className="font-mono-code text-xs font-bold text-white/90">
+                    AR · EN
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 4 Floating Glass Impact Metrics */}
+        <div id="stack" className="mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {CV_IMPACT_STATS.map((st, i) => (
+            <div
+              key={i}
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition hover:border-white/25 hover:bg-white/[0.06]"
+            >
+              <div className="font-mono-code text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                {st.value[locale]}
+              </div>
+              <div className="mt-2 text-sm font-bold text-white">
+                {st.label[locale]}
+              </div>
+              <p className="mt-1 text-xs leading-relaxed text-slate-400">
+                {st.detail[locale]}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Modern Pill Ribbon: AI + Newsroom Tech + Software Engineering */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 rounded-3xl border border-white/10 bg-white/[0.02] p-5 backdrop-blur-xl">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FF2438]/15 px-3.5 py-1.5 text-xs font-bold text-[#FF6B78]">
+            <GraduationCap className="h-3.5 w-3.5" />
+            {CV_EDUCATION.degree[locale]} ({CV_EDUCATION.year})
+          </span>
+          {CV_NEWSROOM_TOOLS.map((tool) => (
+            <span
+              key={tool.name}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 font-mono-code text-xs font-semibold text-slate-200"
+            >
+              <Cpu className="h-3 w-3 text-indigo-400" />
+              {tool.name}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 2: Featured Video Cards */}
+      <section id="work" className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B78]">
+              <Sparkles className="h-3.5 w-3.5" />
+              {isAr ? "على الشاشة والمنصات" : "FEATURED REELS & TALKS"}
+            </span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-white">
+              {isAr ? "مختارات مرئية وحوارية" : "Selected Broadcasts & Talks"}
+            </h2>
+          </div>
+          <Link
+            href={`/${locale}/on-screen`}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-xs font-bold text-white hover:bg-white/12"
+          >
+            <span>{isAr ? "عرض كل الفيديوهات" : "All Videos"}</span>
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {videoSelections.map((vid) => (
+            <a
+              key={vid.slug}
+              href={vid.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.06]"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-black">
+                <img
+                  src={vid.posterAsset}
+                  alt={vid.title[locale]}
+                  style={{ objectPosition: vid.posterFocalPoint }}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <span className="absolute bottom-3 start-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-extrabold text-[#05060B]">
+                  <Play className="h-3 w-3 fill-[#FF2438] text-[#FF2438]" />
+                  {vid.duration}
+                </span>
+              </div>
+              <div className="p-3 pt-4 space-y-2">
+                <div className="text-xs font-semibold text-[#FF6B78]">
+                  {vid.broadcasterOrPlatform[locale]}
+                </div>
+                <h3 className="text-base font-bold text-white leading-snug">
+                  {vid.title[locale]}
+                </h3>
+                <p className="text-xs leading-relaxed text-slate-400 line-clamp-2">
+                  {vid.summary[locale]}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3: Modern Glowing Career Timeline */}
+      <section id="experience" className="relative z-10 mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 space-y-10">
+        <div className="text-center space-y-2">
+          <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">
+            {isAr ? "المسيرة المهنية · 2015 – 2026" : "CAREER TIMELINE · 2015 – 2026"}
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            {isAr ? "من إذاعة هلا 96 إلى العربية والحدث" : "From Hala 96 FM to Al Arabiya & Al Hadath"}
+          </h2>
+        </div>
+
+        <div className="space-y-4">
+          {CV_EXPERIENCE_TIMELINE.map((exp) => (
+            <div
+              key={exp.id}
+              className={`rounded-[28px] border p-6 sm:p-8 backdrop-blur-xl transition ${
+                exp.isCurrent
+                  ? "border-[#FF2438]/40 bg-gradient-to-r from-[#FF2438]/10 via-white/[0.04] to-indigo-500/10"
+                  : "border-white/10 bg-white/[0.03] hover:border-white/20"
+              }`}
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div>
+                  <h3 className="text-xl font-extrabold text-white">
+                    {exp.organization[locale]}
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-0.5">{exp.location[locale]}</p>
+                </div>
+                <span className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold text-white">
+                  {exp.period[locale]}
+                </span>
               </div>
 
-              <div className="divide-y divide-[#111318]/12 border-y border-[#111318]/12">
-                {CV_IMPACT_STATS.map((stat, idx) => (
-                  <div key={idx} className="py-3.5 space-y-0.5">
-                    <div className="font-display-en text-3xl font-bold text-[#111318]">
-                      {stat.value[locale]}
-                    </div>
-                    <div className="text-xs font-bold text-[#D91E2A]">
-                      {stat.label[locale]}
-                    </div>
-                    <p className="text-[11px] leading-relaxed text-[#5A554C]">
-                      {stat.detail[locale]}
-                    </p>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {exp.roles.map((r, idx) => (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl border border-white/8 bg-black/30 p-4 space-y-2 ${
+                      exp.roles.length === 1 ? "md:col-span-2" : ""
+                    }`}
+                  >
+                    <div className="text-sm font-bold text-white">{r.title[locale]}</div>
+                    <ul className="space-y-1.5 text-xs leading-relaxed text-slate-300">
+                      {r.bullets[locale].map((b, bIdx) => (
+                        <li key={bIdx} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FF2438]" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
-
-              {/* Secondary Studio Card */}
-              <div className="border border-[#111318]/15 bg-white p-3 space-y-2.5">
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/media/derivatives/portrait-04-broadcast-yellow-blazer.webp"
-                    alt=""
-                    className="h-14 w-14 object-cover object-top shrink-0"
-                  />
-                  <div className="text-xs">
-                    <div className="font-bold text-[#111318]">
-                      {CV_EDUCATION.degree[locale]}
-                    </div>
-                    <div className="text-[#6E675C]">
-                      {CV_EDUCATION.university[locale]} · {CV_EDUCATION.year}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* SECTION 2: Structured Editorial CV & LinkedIn Ledger */}
-      <section id="career" className="border-b border-[#111318]/15 bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-[#111318] pb-5">
-            <div>
-              <span className="text-xs font-bold text-[#D91E2A] uppercase tracking-wider">
-                {isAr ? "الفهرس المهني الكامل" : "CURRICULUM VITAE & LINKEDIN"}
-              </span>
-              <h2
-                className={`mt-1 text-3xl sm:text-5xl text-[#111318] ${
-                  isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                }`}
-              >
-                {isAr
-                  ? "المسيرة المهنية: من الخرطوم إلى دبي والرياض"
-                  : "Career Chronicle: Khartoum, Dubai & Riyadh"}
-              </h2>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {CV_NEWSROOM_TOOLS.map((tool) => (
-                <span
-                  key={tool.name}
-                  className="border border-[#111318]/20 bg-[#FAF7F2] px-3 py-1 font-mono-code text-[11px] font-semibold text-[#111318]"
-                >
-                  {tool.name}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="divide-y divide-[#111318]/15">
-            {CV_EXPERIENCE_TIMELINE.map((item, i) => (
-              <div
-                key={item.id}
-                className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-12"
-              >
-                <div className="lg:col-span-4 space-y-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono-code text-xs font-bold text-[#D91E2A]">
-                      0{i + 1}
-                    </span>
-                    <span className="text-xs font-semibold text-[#5A554C]">
-                      {item.period[locale]}
-                    </span>
-                  </div>
-                  <h3
-                    className={`text-xl font-bold text-[#111318] ${
-                      isAr ? "font-serif-ar text-2xl" : "font-display-en text-2xl"
-                    }`}
-                  >
-                    {item.organization[locale]}
-                  </h3>
-                  <p className="text-xs text-[#6E675C]">{item.location[locale]}</p>
-                </div>
-
-                <div className="lg:col-span-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  {item.roles.map((role, rIdx) => (
-                    <div
-                      key={rIdx}
-                      className={`border border-[#111318]/12 bg-[#FAF7F2] p-5 space-y-2.5 ${
-                        item.roles.length === 1 ? "sm:col-span-2" : ""
-                      }`}
-                    >
-                      <h4 className="text-sm font-bold text-[#111318]">
-                        {role.title[locale]}
-                      </h4>
-                      <ul className="space-y-1.5 text-xs sm:text-sm leading-relaxed text-[#3E3A33]">
-                        {role.bullets[locale].map((b, bIdx) => (
-                          <li key={bIdx} className="flex items-start gap-2">
-                            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D91E2A]" />
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: Broadcasts & Featured Journalism */}
-      <section id="broadcasts" className="border-b border-[#111318]/15 bg-[#F3EFE6] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <span className="text-xs font-bold text-[#D91E2A] uppercase">
-                {isAr ? "مختارات الفيديو والصحافة" : "BROADCASTS & BYLINES"}
-              </span>
-              <h2
-                className={`mt-1 text-3xl sm:text-5xl text-[#111318] ${
-                  isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                }`}
-              >
-                {isAr ? "أعمال مختارة على الشاشة وفي الصحافة" : "Selected Screen & Written Works"}
-              </h2>
-            </div>
-            <Link
-              href={`/${locale}/on-screen`}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#111318] underline underline-offset-4 hover:text-[#D91E2A]"
+      {/* SECTION 4: Moments */}
+      <section id="moments" className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-8">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          {isAr ? "لقطات ويوميات" : "Moments & Reflections"}
+        </h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {lifeSelections.map((m) => (
+            <div
+              key={m.id}
+              className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-3"
             >
-              <span>{isAr ? "عرض الأرشيف الكامل" : "Open Full Archive"}</span>
-              <ArrowIcon className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {videoSelections.map((video) => (
-              <a
-                key={video.slug}
-                href={video.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col justify-between border border-[#111318]/15 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div>
-                  <div className="relative aspect-[16/10] overflow-hidden bg-[#111318]">
-                    <img
-                      src={video.posterAsset}
-                      alt={video.title[locale]}
-                      style={{ objectPosition: video.posterFocalPoint }}
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <span className="absolute bottom-3 start-3 inline-flex items-center gap-1.5 bg-[#D91E2A] px-2.5 py-1 text-[11px] font-bold text-white">
-                      <Play className="h-3 w-3 fill-current" />
-                      <span>{video.duration || "Video"}</span>
-                    </span>
-                  </div>
-                  <div className="pt-4 space-y-2">
-                    <div className="text-[11px] font-semibold text-[#D91E2A]">
-                      {video.broadcasterOrPlatform[locale]}
-                    </div>
-                    <h3 className="text-lg font-bold leading-snug text-[#111318] group-hover:text-[#D91E2A]">
-                      {video.title[locale]}
-                    </h3>
-                    <p className="text-xs leading-relaxed text-[#5A554C] line-clamp-2">
-                      {video.summary[locale]}
-                    </p>
-                  </div>
+              <img
+                src={m.imageWebp}
+                alt={m.title[locale]}
+                style={{ objectPosition: m.focalPoint }}
+                className="aspect-[4/5] w-full rounded-[20px] object-cover"
+              />
+              <div className="p-3 space-y-1">
+                <div className="text-[11px] font-semibold text-[#FF6B78]">
+                  {m.location[locale]}
                 </div>
-                <div className="mt-4 border-t border-[#111318]/10 pt-3 flex items-center justify-between text-xs font-bold text-[#111318]">
-                  <span>{isAr ? "مشاهدة المادة" : "Watch Segment"}</span>
-                  <ExternalLink className="h-3.5 w-3.5 text-[#D91E2A]" />
-                </div>
-              </a>
-            ))}
-          </div>
-
-          {/* Al Arabiya Bylined Feature Banner */}
-          <div className="border-2 border-[#111318] bg-white p-7 sm:p-10 grid grid-cols-1 gap-6 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-8 space-y-3">
-              <span className="inline-block bg-[#111318] px-3 py-1 text-[11px] font-bold text-white">
-                {isAr ? "مقال منشور باسمها · العربية.نت" : "BYLINED REPORT · AL ARABIYA NET"}
-              </span>
-              <h3
-                className={`text-2xl sm:text-3xl text-[#111318] ${
-                  isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-                }`}
-              >
-                {alArabiyaArticle.title[locale]}
-              </h3>
-              <p className="text-sm leading-relaxed text-[#4A453D]">
-                {alArabiyaArticle.summary[locale]}
-              </p>
+                <div className="text-sm font-bold text-white">{m.title[locale]}</div>
+              </div>
             </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <a
-                href={alArabiyaArticle.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#D91E2A] px-6 py-3.5 text-xs font-bold text-white transition hover:bg-[#111318]"
-              >
-                <span>{isAr ? "قراءة المقال في العربية.نت" : "Read on Al Arabiya Net"}</span>
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* SECTION 4: Polaroid Magazine Triptych — Life & Moments */}
-      <section id="journal" className="bg-[#FAF7F2] py-16 sm:py-24 border-b border-[#111318]/15">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-bold text-[#D91E2A] uppercase">
-              {isAr ? "يوميات وصور مختارة" : "LIFE & MOMENTS"}
+      {/* Sleek Glass Footer */}
+      <footer className="relative z-10 border-t border-white/10 py-10 mt-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-bold text-white">{SITE_IDENTITY.name[locale]}</span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <MapPin className="h-3.5 w-3.5 text-[#FF2438]" />
+              {CV_CONTACT_INFO.location[locale]}
             </span>
-            <h2
-              className={`text-3xl sm:text-5xl text-[#111318] ${
-                isAr ? "font-serif-ar font-bold" : "font-display-en font-semibold"
-              }`}
-            >
-              {isAr ? "بين شاشات الأخبار وتأملات الحياة" : "Inside the Studio & Quiet Reflections"}
-            </h2>
+            <span>·</span>
+            <a href={`mailto:${CV_CONTACT_INFO.email}`} dir="ltr" className="text-white hover:underline">
+              {CV_CONTACT_INFO.email}
+            </a>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {lifeSelections.map((moment) => (
-              <figure
-                key={moment.id}
-                className="border border-[#111318]/15 bg-white p-4 shadow-md space-y-4"
-              >
-                <img
-                  src={moment.imageWebp}
-                  alt={moment.title[locale]}
-                  style={{ objectPosition: moment.focalPoint }}
-                  className="aspect-[4/5] w-full object-cover"
-                />
-                <figcaption className="space-y-1.5 px-1">
-                  <div className="text-[11px] font-bold text-[#D91E2A]">
-                    {moment.location[locale]}
-                  </div>
-                  <h3 className="text-base font-bold text-[#111318]">
-                    {moment.title[locale]}
-                  </h3>
-                  <p className="text-xs leading-relaxed text-[#5A554C]">
-                    {moment.captionExcerpt[locale]}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sunlit Ivory Editorial Footer */}
-      <footer className="bg-white py-12 text-[#111318]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="space-y-1">
-            <div className="font-bold text-lg">{SITE_IDENTITY.name[locale]}</div>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-[#5A554C]">
-              <span className="inline-flex items-center gap-1">
-                <MapPin className="h-3.5 w-3.5 text-[#D91E2A]" />
-                {CV_CONTACT_INFO.location[locale]}
-              </span>
-              <span>·</span>
-              <a
-                href={`mailto:${CV_CONTACT_INFO.email}`}
-                dir="ltr"
-                className="font-mono-code underline"
-              >
-                {CV_CONTACT_INFO.email}
-              </a>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {(["linkedin", "instagram", "x", "facebook"] as const).map((p) => (
               <a
                 key={p}
                 href={SITE_IDENTITY.socialLinks[p].url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#111318]/20 text-[#111318] transition hover:bg-[#111318] hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/5 text-white transition hover:bg-[#FF2438] hover:border-[#FF2438]"
               >
                 <SocialPlatformIcon platform={p} className="h-4 w-4" />
               </a>
             ))}
           </div>
 
-          <div className="text-xs text-[#5A554C]">
+          <div>
             Built by{" "}
             <a
               href="https://nexorayyc.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-[#111318] underline decoration-[#D91E2A] underline-offset-4"
+              className="font-bold text-white hover:text-[#FF6B78]"
             >
               Nexora
-            </a>
+            </a>{" "}
+            <ExternalLink className="inline h-3 w-3" />
           </div>
         </div>
       </footer>

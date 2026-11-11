@@ -70,6 +70,22 @@
   font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 }
 
+.font-modern-ar {
+  font-family: "Alexandria", "IBM Plex Sans Arabic", "Readex Pro", system-ui, sans-serif;
+}
+
+.font-plex-ar {
+  font-family: "IBM Plex Sans Arabic", "Alexandria", system-ui, sans-serif;
+}
+
+.font-modern-en {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+.font-syne {
+  font-family: "Syne", "Plus Jakarta Sans", sans-serif;
+}
+
 /*Elevated Surface Utilities*/
 .surface-glass-dark {
   background: linear-gradient(

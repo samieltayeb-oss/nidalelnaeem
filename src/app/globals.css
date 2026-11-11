@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "OnePressCairo";
+  src: url("/fonts/Cairo-Arabic-400.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OnePressCairo";
+  src: url("/fonts/Cairo-Arabic-600.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OnePressCairo";
+  src: url("/fonts/Cairo-Arabic-700.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700 800;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --bg-white: #ffffff;
@@ -9,7 +33,7 @@
     --ink-muted: #717784;
     --accent-red: #ff1e2d;
     --accent-red-soft: #fff0f1;
-    --font-readex: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+    --arabic: "OnePressCairo", "Cairo", "Plus Jakarta Sans", Tahoma, Arial, sans-serif;
     --font-jakarta: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
     --font-jetbrains: "JetBrains Mono", Consolas, monospace;
   }
@@ -34,25 +58,26 @@
   }
 }
 
-/* Modern 2026 Geometric Sans Typography System */
+/* OnePress Cairo Arabic Typography + Modern English Geometric Sans */
 .font-modern-ar,
 .font-display-ar,
-.font-sans-ar {
-  font-family: "Alexandria", "IBM Plex Sans Arabic", var(--font-readex), system-ui, -apple-system, sans-serif;
+.font-sans-ar,
+.font-plex-ar {
+  font-family: var(--arabic);
 }
 
-.font-plex-ar {
-  font-family: "IBM Plex Sans Arabic", "Alexandria", system-ui, sans-serif;
+[dir="rtl"] :not(.font-mono-code) {
+  letter-spacing: 0 !important;
 }
 
 .font-modern-en,
 .font-display-en,
 .font-sans-en {
-  font-family: "Plus Jakarta Sans", var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-jakarta);
 }
 
 .font-syne {
-  font-family: "Syne", "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .font-mono-code {

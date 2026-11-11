@@ -80,7 +80,7 @@ export function CuratedMediaPlayer({
         <div className="group relative overflow-hidden rounded-[24px] bg-[#090A0F]">
           <div
             className={`relative w-full overflow-hidden ${
-              compact ? "aspect-[16/10]" : "aspect-[16/9]"
+              compact ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3] sm:aspect-[16/9]"
             }`}
           >
             <picture className="block h-full w-full">
